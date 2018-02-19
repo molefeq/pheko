@@ -1,0 +1,23 @@
+﻿@using Pheko.WebPresentation.ViewModels;
+
+@model PatientDeseaseScreeningViewModel
+
+<div class="container-fluid">
+    <div class="form-group">
+        @Html.Label("Desease Screenings", new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-10" data-bind='foreach: patientdeseasescreenings'>
+            <div class="col-md-3">
+                <div class="checkbox-inline">
+                    <label>
+                        <input type="checkbox" class="cbYearOfScreening" data-bind="checked: SelectedInd" />
+                        @Html.LabelFor(model => model.DeseaseScreening_Name, new { data_bind = "text: DeseaseScreening_Name" })
+                    </label>
+                </div>
+                <div class="checkbox-inline" data-bind="visible: SelectedInd">
+                    @Html.LabelFor(model => model.YearOfScreening)
+                    @Html.DropDownListFor(model => model.YearOfScreening, new SelectList(ViewBag.Years, "Value", "Text"), "-- Year --", new { @class = "ddlDeseaseScreeningYear", data_bind = "value: YearOfScreening" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

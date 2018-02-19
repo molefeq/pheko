@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cc5e8e98-f640-4f1c-b0e9-8c35e29bc3db" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="Pheko.Common" />
+      <ReferencedAssembly AssemblyName="System.Data" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:53085/PhekoService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PhekoService.xsd" MetadataType="Schema" ID="3ca52e74-f4ca-46b8-b48e-8c6b319cb4ae" SourceId="1" SourceUrl="http://localhost:53085/PhekoService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PhekoService1.xsd" MetadataType="Schema" ID="9697fdbe-af47-418e-bcfb-4f7e33509713" SourceId="1" SourceUrl="http://localhost:53085/PhekoService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PhekoService2.xsd" MetadataType="Schema" ID="dfe55801-5fd7-4fbb-afbb-45f16be5ed82" SourceId="1" SourceUrl="http://localhost:53085/PhekoService.svc?xsd=xsd4" />
+    <MetadataFile FileName="PhekoService.wsdl" MetadataType="Wsdl" ID="d8fabc89-a9ba-485f-b102-be3e62cba30d" SourceId="1" SourceUrl="http://localhost:53085/PhekoService.svc?wsdl" />
+    <MetadataFile FileName="PhekoService3.xsd" MetadataType="Schema" ID="67e8fcf0-2269-48c2-92df-616e177315b2" SourceId="1" SourceUrl="http://localhost:53085/PhekoService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PhekoService4.xsd" MetadataType="Schema" ID="ac9f917f-64a2-4b2b-ad6e-3ddbcd20e276" SourceId="1" SourceUrl="http://localhost:53085/PhekoService.svc?xsd=xsd6" />
+    <MetadataFile FileName="PhekoService5.xsd" MetadataType="Schema" ID="0ee18ceb-7191-40ec-a89e-d48db36ef0fe" SourceId="1" SourceUrl="http://localhost:53085/PhekoService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PhekoService6.xsd" MetadataType="Schema" ID="a89b19e2-4a3d-400c-9d48-1bbf0623af53" SourceId="1" SourceUrl="http://localhost:53085/PhekoService.svc?xsd=xsd5" />
+    <MetadataFile FileName="PhekoService.disco" MetadataType="Disco" ID="a7522202-2219-4c6c-ad21-377d8a1fea29" SourceId="1" SourceUrl="http://localhost:53085/PhekoService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

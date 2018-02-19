@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3b79b59954c64f29889da1c581bfa479" Name="Diagram1">
+        <EntityTypeShape EntityType="PhekoModel.ChronicDesease" Width="1.5" PointX="3" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.ClinicalExamination" Width="1.5" PointX="8.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.Country" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.DeseaseScreening" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.Doctor" Width="1.5" PointX="6" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.Field" Width="1.5" PointX="8.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.FieldValue" Width="1.5" PointX="11" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.MedicalMonitoring" Width="1.5" PointX="8.25" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.MedicalNote" Width="1.5" PointX="11.25" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.PastMedicalHistory" Width="1.5" PointX="3" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.Patient" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.PatientAddress" Width="1.5" PointX="0.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.PatientChronicDesease" Width="1.5" PointX="5.25" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.PatientClinicalExamination" Width="1.5" PointX="10.5" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.PatientConsultation" Width="1.5" PointX="8.25" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.PatientConsultationSickNote" Width="1.5" PointX="10.5" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.PatientDeseaseScreening" Width="1.5" PointX="5.25" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.PatientMedicalAidDependancy" Width="1.5" PointX="5.25" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.PatientMedicalMonitoring" Width="1.5" PointX="10.5" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.PatientMedicalNote" Width="1.5" PointX="13.5" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.PatientPastMedicalHistory" Width="1.5" PointX="5.25" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.PatientVitalSign" Width="1.5" PointX="13.5" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.Province" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.SecurityMenuItem" Width="1.5" PointX="6" PointY="30.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.SecurityObject" Width="1.5" PointX="3.75" PointY="29.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.SecurityObjectRight" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.SecurityRole" Width="1.5" PointX="3.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.SecurityUser" Width="1.5" PointX="3.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.SecurityUserConnectionManager" Width="1.5" PointX="6" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.SecurityUserRole" Width="1.5" PointX="6" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhekoModel.VitalSign" Width="1.5" PointX="11.25" PointY="10.875" IsExpanded="true" />
+        <AssociationConnector Association="PhekoModel.FK_PatientChronicDesease_ChronicDesease" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_PatientClinicalExamination_ClinicalExamination" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_PatientDeseaseScreening_DeseaseScreening" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_Doctor_SecurityUser" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_PatientConsultation_Doctor" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_FieldValue_Field" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_PatientMedicalMonitoring_MedicalMonitoring" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_PatientMedicalNote_MedicalNote" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_PatientPastMedicalHistory_PastMedicalHistory" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_Patient_PatientPhysicalAddress" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_Patient_PatientPostalAddress" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_PatientChronicDesease_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_PatientConsultation_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_PatientConsultationSickNote_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_PatientDeseaseScreening_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_PatientMedicalAidDependancies_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_PatientPastMedicalHistory_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_PatientClinicalExamination_PatientConsultation" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_PatientConsultationSickNote_PatientConsultation" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_PatientMedicalMonitoring_PatientConsultation" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_PatientMedicalNote_PatientConsultation" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_PatientVitalSign_PatientConsultation" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_PatientVitalSign_VitalSign" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_SecurityMenuItem_SecurityObject" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_SecurityObjectRight_SecurityObject" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_SecurityObjectRight_SecurityRole" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_SecurityUserRole_SecurityRole" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_SecurityUserConnectionManager_SecurityUser" ManuallyRouted="false" />
+        <AssociationConnector Association="PhekoModel.FK_SecurityUserRole_SecurityUser" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

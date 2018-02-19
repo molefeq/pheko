@@ -1,0 +1,2496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PhekoModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="PhekoModelStoreContainer">
+          <EntitySet Name="ChronicDesease" EntityType="PhekoModel.Store.ChronicDesease" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ClinicalExamination" EntityType="PhekoModel.Store.ClinicalExamination" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Country" EntityType="PhekoModel.Store.Country" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DeseaseScreening" EntityType="PhekoModel.Store.DeseaseScreening" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Doctor" EntityType="PhekoModel.Store.Doctor" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Field" EntityType="PhekoModel.Store.Field" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FieldValue" EntityType="PhekoModel.Store.FieldValue" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MedicalMonitoring" EntityType="PhekoModel.Store.MedicalMonitoring" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MedicalNote" EntityType="PhekoModel.Store.MedicalNote" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PastMedicalHistory" EntityType="PhekoModel.Store.PastMedicalHistory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Patient" EntityType="PhekoModel.Store.Patient" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatientAddress" EntityType="PhekoModel.Store.PatientAddress" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatientChronicDesease" EntityType="PhekoModel.Store.PatientChronicDesease" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatientClinicalExamination" EntityType="PhekoModel.Store.PatientClinicalExamination" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatientConsultation" EntityType="PhekoModel.Store.PatientConsultation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatientConsultationSickNote" EntityType="PhekoModel.Store.PatientConsultationSickNote" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatientDeseaseScreening" EntityType="PhekoModel.Store.PatientDeseaseScreening" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatientMedicalAidDependancies" EntityType="PhekoModel.Store.PatientMedicalAidDependancies" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatientMedicalMonitoring" EntityType="PhekoModel.Store.PatientMedicalMonitoring" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatientMedicalNote" EntityType="PhekoModel.Store.PatientMedicalNote" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatientPastMedicalHistory" EntityType="PhekoModel.Store.PatientPastMedicalHistory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatientVitalSign" EntityType="PhekoModel.Store.PatientVitalSign" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Province" EntityType="PhekoModel.Store.Province" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SecurityMenuItem" EntityType="PhekoModel.Store.SecurityMenuItem" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SecurityObject" EntityType="PhekoModel.Store.SecurityObject" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SecurityObjectRight" EntityType="PhekoModel.Store.SecurityObjectRight" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SecurityRole" EntityType="PhekoModel.Store.SecurityRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SecurityUser" EntityType="PhekoModel.Store.SecurityUser" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SecurityUserConnectionManager" EntityType="PhekoModel.Store.SecurityUserConnectionManager" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SecurityUserRole" EntityType="PhekoModel.Store.SecurityUserRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VitalSign" EntityType="PhekoModel.Store.VitalSign" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Doctor_SecurityUser" Association="PhekoModel.Store.FK_Doctor_SecurityUser">
+            <End Role="SecurityUser" EntitySet="SecurityUser" />
+            <End Role="Doctor" EntitySet="Doctor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FieldValue_Field" Association="PhekoModel.Store.FK_FieldValue_Field">
+            <End Role="Field" EntitySet="Field" />
+            <End Role="FieldValue" EntitySet="FieldValue" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Patient_PatientPhysicalAddress" Association="PhekoModel.Store.FK_Patient_PatientPhysicalAddress">
+            <End Role="PatientAddress" EntitySet="PatientAddress" />
+            <End Role="Patient" EntitySet="Patient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Patient_PatientPostalAddress" Association="PhekoModel.Store.FK_Patient_PatientPostalAddress">
+            <End Role="PatientAddress" EntitySet="PatientAddress" />
+            <End Role="Patient" EntitySet="Patient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientChronicDesease_ChronicDesease" Association="PhekoModel.Store.FK_PatientChronicDesease_ChronicDesease">
+            <End Role="ChronicDesease" EntitySet="ChronicDesease" />
+            <End Role="PatientChronicDesease" EntitySet="PatientChronicDesease" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientChronicDesease_Patient" Association="PhekoModel.Store.FK_PatientChronicDesease_Patient">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="PatientChronicDesease" EntitySet="PatientChronicDesease" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientClinicalExamination_ClinicalExamination" Association="PhekoModel.Store.FK_PatientClinicalExamination_ClinicalExamination">
+            <End Role="ClinicalExamination" EntitySet="ClinicalExamination" />
+            <End Role="PatientClinicalExamination" EntitySet="PatientClinicalExamination" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientClinicalExamination_PatientConsultation" Association="PhekoModel.Store.FK_PatientClinicalExamination_PatientConsultation">
+            <End Role="PatientConsultation" EntitySet="PatientConsultation" />
+            <End Role="PatientClinicalExamination" EntitySet="PatientClinicalExamination" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientConsultation_Doctor" Association="PhekoModel.Store.FK_PatientConsultation_Doctor">
+            <End Role="Doctor" EntitySet="Doctor" />
+            <End Role="PatientConsultation" EntitySet="PatientConsultation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientConsultation_Patient" Association="PhekoModel.Store.FK_PatientConsultation_Patient">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="PatientConsultation" EntitySet="PatientConsultation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientConsultationSickNote_Patient" Association="PhekoModel.Store.FK_PatientConsultationSickNote_Patient">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="PatientConsultationSickNote" EntitySet="PatientConsultationSickNote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientConsultationSickNote_PatientConsultation" Association="PhekoModel.Store.FK_PatientConsultationSickNote_PatientConsultation">
+            <End Role="PatientConsultation" EntitySet="PatientConsultation" />
+            <End Role="PatientConsultationSickNote" EntitySet="PatientConsultationSickNote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientDeseaseScreening_DeseaseScreening" Association="PhekoModel.Store.FK_PatientDeseaseScreening_DeseaseScreening">
+            <End Role="DeseaseScreening" EntitySet="DeseaseScreening" />
+            <End Role="PatientDeseaseScreening" EntitySet="PatientDeseaseScreening" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientDeseaseScreening_Patient" Association="PhekoModel.Store.FK_PatientDeseaseScreening_Patient">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="PatientDeseaseScreening" EntitySet="PatientDeseaseScreening" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientMedicalAidDependancies_Patient" Association="PhekoModel.Store.FK_PatientMedicalAidDependancies_Patient">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="PatientMedicalAidDependancies" EntitySet="PatientMedicalAidDependancies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientMedicalMonitoring_MedicalMonitoring" Association="PhekoModel.Store.FK_PatientMedicalMonitoring_MedicalMonitoring">
+            <End Role="MedicalMonitoring" EntitySet="MedicalMonitoring" />
+            <End Role="PatientMedicalMonitoring" EntitySet="PatientMedicalMonitoring" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientMedicalMonitoring_PatientConsultation" Association="PhekoModel.Store.FK_PatientMedicalMonitoring_PatientConsultation">
+            <End Role="PatientConsultation" EntitySet="PatientConsultation" />
+            <End Role="PatientMedicalMonitoring" EntitySet="PatientMedicalMonitoring" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientMedicalNote_MedicalNote" Association="PhekoModel.Store.FK_PatientMedicalNote_MedicalNote">
+            <End Role="MedicalNote" EntitySet="MedicalNote" />
+            <End Role="PatientMedicalNote" EntitySet="PatientMedicalNote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientMedicalNote_PatientConsultation" Association="PhekoModel.Store.FK_PatientMedicalNote_PatientConsultation">
+            <End Role="PatientConsultation" EntitySet="PatientConsultation" />
+            <End Role="PatientMedicalNote" EntitySet="PatientMedicalNote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientPastMedicalHistory_PastMedicalHistory" Association="PhekoModel.Store.FK_PatientPastMedicalHistory_PastMedicalHistory">
+            <End Role="PastMedicalHistory" EntitySet="PastMedicalHistory" />
+            <End Role="PatientPastMedicalHistory" EntitySet="PatientPastMedicalHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientPastMedicalHistory_Patient" Association="PhekoModel.Store.FK_PatientPastMedicalHistory_Patient">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="PatientPastMedicalHistory" EntitySet="PatientPastMedicalHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientVitalSign_PatientConsultation" Association="PhekoModel.Store.FK_PatientVitalSign_PatientConsultation">
+            <End Role="PatientConsultation" EntitySet="PatientConsultation" />
+            <End Role="PatientVitalSign" EntitySet="PatientVitalSign" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientVitalSign_VitalSign" Association="PhekoModel.Store.FK_PatientVitalSign_VitalSign">
+            <End Role="VitalSign" EntitySet="VitalSign" />
+            <End Role="PatientVitalSign" EntitySet="PatientVitalSign" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecurityMenuItem_SecurityObject" Association="PhekoModel.Store.FK_SecurityMenuItem_SecurityObject">
+            <End Role="SecurityObject" EntitySet="SecurityObject" />
+            <End Role="SecurityMenuItem" EntitySet="SecurityMenuItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecurityObjectRight_SecurityObject" Association="PhekoModel.Store.FK_SecurityObjectRight_SecurityObject">
+            <End Role="SecurityObject" EntitySet="SecurityObject" />
+            <End Role="SecurityObjectRight" EntitySet="SecurityObjectRight" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecurityObjectRight_SecurityRole" Association="PhekoModel.Store.FK_SecurityObjectRight_SecurityRole">
+            <End Role="SecurityRole" EntitySet="SecurityRole" />
+            <End Role="SecurityObjectRight" EntitySet="SecurityObjectRight" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecurityUserConnectionManager_SecurityUser" Association="PhekoModel.Store.FK_SecurityUserConnectionManager_SecurityUser">
+            <End Role="SecurityUser" EntitySet="SecurityUser" />
+            <End Role="SecurityUserConnectionManager" EntitySet="SecurityUserConnectionManager" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecurityUserRole_SecurityRole" Association="PhekoModel.Store.FK_SecurityUserRole_SecurityRole">
+            <End Role="SecurityRole" EntitySet="SecurityRole" />
+            <End Role="SecurityUserRole" EntitySet="SecurityUserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecurityUserRole_SecurityUser" Association="PhekoModel.Store.FK_SecurityUserRole_SecurityUser">
+            <End Role="SecurityUser" EntitySet="SecurityUser" />
+            <End Role="SecurityUserRole" EntitySet="SecurityUserRole" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ChronicDesease">
+          <Key>
+            <PropertyRef Name="ChronicDeseaseId" />
+          </Key>
+          <Property Name="ChronicDeseaseId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="SortKey" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClinicalExamination">
+          <Key>
+            <PropertyRef Name="ClinicalExaminationId" />
+          </Key>
+          <Property Name="ClinicalExaminationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="SortKey" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CountryName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CountryCode" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="DeseaseScreening">
+          <Key>
+            <PropertyRef Name="DeseaseScreeningId" />
+          </Key>
+          <Property Name="DeseaseScreeningId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="SortKey" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="DoctorId" />
+          </Key>
+          <Property Name="DoctorId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SecurityUserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Field">
+          <Key>
+            <PropertyRef Name="FieldId" />
+          </Key>
+          <Property Name="FieldId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TableName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="FieldName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DataType" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="FieldValue">
+          <Key>
+            <PropertyRef Name="FieldValueId" />
+          </Key>
+          <Property Name="FieldValueId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FieldId" Type="int" Nullable="false" />
+          <Property Name="SortOrder" Type="int" />
+          <Property Name="PropertyValue" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="DisplayValue" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="MedicalMonitoring">
+          <Key>
+            <PropertyRef Name="MedicalMonitoringId" />
+          </Key>
+          <Property Name="MedicalMonitoringId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="SortKey" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MedicalNote">
+          <Key>
+            <PropertyRef Name="MedicalNoteId" />
+          </Key>
+          <Property Name="MedicalNoteId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="SortKey" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PastMedicalHistory">
+          <Key>
+            <PropertyRef Name="PastMedicalHistoryId" />
+          </Key>
+          <Property Name="PastMedicalHistoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="SortKey" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="PatientId" />
+          </Key>
+          <Property Name="PatientId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="varchar" MaxLength="10" />
+          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Gender" Type="varchar" MaxLength="10" />
+          <Property Name="EthnicGroup" Type="varchar" MaxLength="10" />
+          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="IDNumber" Type="varchar" MaxLength="20" />
+          <Property Name="MobileNumber" Type="varchar" MaxLength="20" />
+          <Property Name="HomeTelephoneCode" Type="varchar" MaxLength="10" />
+          <Property Name="HomeTelephoneNumber" Type="varchar" MaxLength="20" />
+          <Property Name="WorkTelephoneCode" Type="varchar" MaxLength="10" />
+          <Property Name="WorkTelephoneNumber" Type="varchar" MaxLength="20" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="100" />
+          <Property Name="MaritalStatus" Type="varchar" MaxLength="10" />
+          <Property Name="MarriageType" Type="varchar" MaxLength="50" />
+          <Property Name="PrefferedContactType" Type="varchar" MaxLength="20" />
+          <Property Name="PhysicalAddressId" Type="int" />
+          <Property Name="PostalAddressId" Type="int" />
+          <Property Name="MedicalAidName" Type="varchar" MaxLength="100" />
+          <Property Name="MedicalAidScheme" Type="varchar" MaxLength="100" />
+          <Property Name="MedicalAidNumber" Type="varchar" MaxLength="100" />
+          <Property Name="PrincipalMemberInd" Type="bit" />
+          <Property Name="PrefferedContactMethod" Type="varchar" MaxLength="50" />
+          <Property Name="SourceOfDiscovery" Type="varchar" MaxLength="100" />
+          <Property Name="MedicalAidInd" Type="bit" />
+          <Property Name="IDType" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="PatientAddress">
+          <Key>
+            <PropertyRef Name="PatientAddressId" />
+          </Key>
+          <Property Name="PatientAddressId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Line1" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Line2" Type="varchar" MaxLength="50" />
+          <Property Name="Suburb" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="100" />
+          <Property Name="PostalCode" Type="varchar" MaxLength="10" />
+          <Property Name="ProvinceId" Type="int" />
+          <Property Name="CountryId" Type="int" />
+        </EntityType>
+        <EntityType Name="PatientChronicDesease">
+          <Key>
+            <PropertyRef Name="PatientChronicDeseaseId" />
+          </Key>
+          <Property Name="PatientChronicDeseaseId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="ChronicDeseaseId" Type="int" Nullable="false" />
+          <Property Name="YearOfDiagnoses" Type="int" />
+          <Property Name="Value" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="PatientClinicalExamination">
+          <Key>
+            <PropertyRef Name="PatientClinicalExaminationId" />
+          </Key>
+          <Property Name="PatientClinicalExaminationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientConsultationId" Type="int" Nullable="false" />
+          <Property Name="ClinicalExaminationId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="varchar" Nullable="false" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="PatientConsultation">
+          <Key>
+            <PropertyRef Name="PatientConsultationId" />
+          </Key>
+          <Property Name="PatientConsultationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DoctorId" Type="int" Nullable="false" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="ConsultationStatus" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="StartDate" Type="datetime" Nullable="false" />
+          <Property Name="EndDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PatientConsultationSickNote">
+          <Key>
+            <PropertyRef Name="PatientConsultationSickNoteId" />
+          </Key>
+          <Property Name="PatientConsultationSickNoteId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientConsultationId" Type="int" Nullable="false" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="SicknessReason" Type="varchar" MaxLength="2000" />
+          <Property Name="Diagnoses" Type="varchar" MaxLength="2000" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PatientDeseaseScreening">
+          <Key>
+            <PropertyRef Name="PatientDeseaseScreeningId" />
+          </Key>
+          <Property Name="PatientDeseaseScreeningId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="DeseaseScreeningId" Type="int" Nullable="false" />
+          <Property Name="YearOfScreening" Type="int" />
+          <Property Name="Value" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="PatientMedicalAidDependancies">
+          <Key>
+            <PropertyRef Name="PatientMedicalAidDependanciesId" />
+          </Key>
+          <Property Name="PatientMedicalAidDependanciesId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="FirstFullName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="MedicalAidCode" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="Relationship" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="PrincipalInd" Type="bit" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="PatientMedicalMonitoring">
+          <Key>
+            <PropertyRef Name="PatientMedicalMonitoringId" />
+          </Key>
+          <Property Name="PatientMedicalMonitoringId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientConsultationId" Type="int" Nullable="false" />
+          <Property Name="MedicalMonitoringId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="varchar" Nullable="false" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="PatientMedicalNote">
+          <Key>
+            <PropertyRef Name="PatientMedicalNoteId" />
+          </Key>
+          <Property Name="PatientMedicalNoteId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientConsultationId" Type="int" Nullable="false" />
+          <Property Name="MedicalNoteId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="varchar" Nullable="false" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="PatientPastMedicalHistory">
+          <Key>
+            <PropertyRef Name="PatientPastMedicalHistoryId" />
+          </Key>
+          <Property Name="PatientPastMedicalHistoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="PastMedicalHistoryId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="PatientVitalSign">
+          <Key>
+            <PropertyRef Name="PatientVitalSignId" />
+          </Key>
+          <Property Name="PatientVitalSignId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientConsultationId" Type="int" Nullable="false" />
+          <Property Name="VitalSignId" Type="int" Nullable="false" />
+          <Property Name="VitalSignValue" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Province">
+          <Key>
+            <PropertyRef Name="ProvinceId" />
+          </Key>
+          <Property Name="ProvinceId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProvinceName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SecurityMenuItem">
+          <Key>
+            <PropertyRef Name="SecurityMenuItemId" />
+          </Key>
+          <Property Name="SecurityMenuItemId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SecurityObjectId" Type="int" Nullable="false" />
+          <Property Name="MenuItem" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="MenuPath" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="MenuOrder" Type="int" Nullable="false" />
+          <Property Name="MenuType" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SecurityObject">
+          <Key>
+            <PropertyRef Name="SecurityObjectId" />
+          </Key>
+          <Property Name="SecurityObjectId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ObjectName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SecurityObjectRight">
+          <Key>
+            <PropertyRef Name="SecurityObjectRightId" />
+          </Key>
+          <Property Name="SecurityObjectRightId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SecurityObjectId" Type="int" Nullable="false" />
+          <Property Name="AccessType" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="SecurityRoleId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SecurityRole">
+          <Key>
+            <PropertyRef Name="SecurityRoleId" />
+          </Key>
+          <Property Name="SecurityRoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SecurityRoleName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SecurityUser">
+          <Key>
+            <PropertyRef Name="SecurityUserId" />
+          </Key>
+          <Property Name="SecurityUserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Title" Type="varchar" MaxLength="10" />
+          <Property Name="Initials" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IDNumber" Type="varchar" MaxLength="20" />
+          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="Gender" Type="varchar" MaxLength="10" />
+          <Property Name="WorkTelephoneCode" Type="varchar" MaxLength="10" />
+          <Property Name="WorkTelephoneNumber" Type="varchar" MaxLength="10" />
+          <Property Name="FaxCode" Type="varchar" MaxLength="10" />
+          <Property Name="FaxNumber" Type="varchar" MaxLength="10" />
+          <Property Name="MobileNumber" Type="varchar" MaxLength="10" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="100" />
+          <Property Name="EmployeeNumber" Type="varchar" MaxLength="50" />
+          <Property Name="DisabledDate" Type="datetime" />
+          <Property Name="PasswordSalt" Type="varbinary(max)" Nullable="false" />
+          <Property Name="Password" Type="varbinary(max)" Nullable="false" />
+          <Property Name="FirstTimeLogInInd" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SecurityUserConnectionManager">
+          <Key>
+            <PropertyRef Name="SecurityUserConnectionManagerId" />
+          </Key>
+          <Property Name="SecurityUserConnectionManagerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SecurityUserId" Type="int" Nullable="false" />
+          <Property Name="ConnectionId" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SecurityUserRole">
+          <Key>
+            <PropertyRef Name="SecurityUserRoleId" />
+          </Key>
+          <Property Name="SecurityUserRoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SecurityUserId" Type="int" Nullable="false" />
+          <Property Name="SecurityRoleId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VitalSign">
+          <Key>
+            <PropertyRef Name="VitalSignId" />
+          </Key>
+          <Property Name="VitalSignId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="SortKey" Type="int" />
+        </EntityType>
+        <Association Name="FK_Doctor_SecurityUser">
+          <End Role="SecurityUser" Type="PhekoModel.Store.SecurityUser" Multiplicity="1" />
+          <End Role="Doctor" Type="PhekoModel.Store.Doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecurityUser">
+              <PropertyRef Name="SecurityUserId" />
+            </Principal>
+            <Dependent Role="Doctor">
+              <PropertyRef Name="SecurityUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FieldValue_Field">
+          <End Role="Field" Type="PhekoModel.Store.Field" Multiplicity="1" />
+          <End Role="FieldValue" Type="PhekoModel.Store.FieldValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Field">
+              <PropertyRef Name="FieldId" />
+            </Principal>
+            <Dependent Role="FieldValue">
+              <PropertyRef Name="FieldId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Patient_PatientPhysicalAddress">
+          <End Role="PatientAddress" Type="PhekoModel.Store.PatientAddress" Multiplicity="0..1" />
+          <End Role="Patient" Type="PhekoModel.Store.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PatientAddress">
+              <PropertyRef Name="PatientAddressId" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="PhysicalAddressId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Patient_PatientPostalAddress">
+          <End Role="PatientAddress" Type="PhekoModel.Store.PatientAddress" Multiplicity="0..1" />
+          <End Role="Patient" Type="PhekoModel.Store.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PatientAddress">
+              <PropertyRef Name="PatientAddressId" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="PostalAddressId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientChronicDesease_ChronicDesease">
+          <End Role="ChronicDesease" Type="PhekoModel.Store.ChronicDesease" Multiplicity="1" />
+          <End Role="PatientChronicDesease" Type="PhekoModel.Store.PatientChronicDesease" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChronicDesease">
+              <PropertyRef Name="ChronicDeseaseId" />
+            </Principal>
+            <Dependent Role="PatientChronicDesease">
+              <PropertyRef Name="ChronicDeseaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientChronicDesease_Patient">
+          <End Role="Patient" Type="PhekoModel.Store.Patient" Multiplicity="1" />
+          <End Role="PatientChronicDesease" Type="PhekoModel.Store.PatientChronicDesease" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="PatientChronicDesease">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientClinicalExamination_ClinicalExamination">
+          <End Role="ClinicalExamination" Type="PhekoModel.Store.ClinicalExamination" Multiplicity="1" />
+          <End Role="PatientClinicalExamination" Type="PhekoModel.Store.PatientClinicalExamination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClinicalExamination">
+              <PropertyRef Name="ClinicalExaminationId" />
+            </Principal>
+            <Dependent Role="PatientClinicalExamination">
+              <PropertyRef Name="ClinicalExaminationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientClinicalExamination_PatientConsultation">
+          <End Role="PatientConsultation" Type="PhekoModel.Store.PatientConsultation" Multiplicity="1" />
+          <End Role="PatientClinicalExamination" Type="PhekoModel.Store.PatientClinicalExamination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PatientConsultation">
+              <PropertyRef Name="PatientConsultationId" />
+            </Principal>
+            <Dependent Role="PatientClinicalExamination">
+              <PropertyRef Name="PatientConsultationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientConsultation_Doctor">
+          <End Role="Doctor" Type="PhekoModel.Store.Doctor" Multiplicity="1" />
+          <End Role="PatientConsultation" Type="PhekoModel.Store.PatientConsultation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="DoctorId" />
+            </Principal>
+            <Dependent Role="PatientConsultation">
+              <PropertyRef Name="DoctorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientConsultation_Patient">
+          <End Role="Patient" Type="PhekoModel.Store.Patient" Multiplicity="1" />
+          <End Role="PatientConsultation" Type="PhekoModel.Store.PatientConsultation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="PatientConsultation">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientConsultationSickNote_Patient">
+          <End Role="Patient" Type="PhekoModel.Store.Patient" Multiplicity="1" />
+          <End Role="PatientConsultationSickNote" Type="PhekoModel.Store.PatientConsultationSickNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="PatientConsultationSickNote">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientConsultationSickNote_PatientConsultation">
+          <End Role="PatientConsultation" Type="PhekoModel.Store.PatientConsultation" Multiplicity="1" />
+          <End Role="PatientConsultationSickNote" Type="PhekoModel.Store.PatientConsultationSickNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PatientConsultation">
+              <PropertyRef Name="PatientConsultationId" />
+            </Principal>
+            <Dependent Role="PatientConsultationSickNote">
+              <PropertyRef Name="PatientConsultationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientDeseaseScreening_DeseaseScreening">
+          <End Role="DeseaseScreening" Type="PhekoModel.Store.DeseaseScreening" Multiplicity="1" />
+          <End Role="PatientDeseaseScreening" Type="PhekoModel.Store.PatientDeseaseScreening" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeseaseScreening">
+              <PropertyRef Name="DeseaseScreeningId" />
+            </Principal>
+            <Dependent Role="PatientDeseaseScreening">
+              <PropertyRef Name="DeseaseScreeningId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientDeseaseScreening_Patient">
+          <End Role="Patient" Type="PhekoModel.Store.Patient" Multiplicity="1" />
+          <End Role="PatientDeseaseScreening" Type="PhekoModel.Store.PatientDeseaseScreening" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="PatientDeseaseScreening">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientMedicalAidDependancies_Patient">
+          <End Role="Patient" Type="PhekoModel.Store.Patient" Multiplicity="1" />
+          <End Role="PatientMedicalAidDependancies" Type="PhekoModel.Store.PatientMedicalAidDependancies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="PatientMedicalAidDependancies">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientMedicalMonitoring_MedicalMonitoring">
+          <End Role="MedicalMonitoring" Type="PhekoModel.Store.MedicalMonitoring" Multiplicity="1" />
+          <End Role="PatientMedicalMonitoring" Type="PhekoModel.Store.PatientMedicalMonitoring" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MedicalMonitoring">
+              <PropertyRef Name="MedicalMonitoringId" />
+            </Principal>
+            <Dependent Role="PatientMedicalMonitoring">
+              <PropertyRef Name="MedicalMonitoringId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientMedicalMonitoring_PatientConsultation">
+          <End Role="PatientConsultation" Type="PhekoModel.Store.PatientConsultation" Multiplicity="1" />
+          <End Role="PatientMedicalMonitoring" Type="PhekoModel.Store.PatientMedicalMonitoring" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PatientConsultation">
+              <PropertyRef Name="PatientConsultationId" />
+            </Principal>
+            <Dependent Role="PatientMedicalMonitoring">
+              <PropertyRef Name="PatientConsultationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientMedicalNote_MedicalNote">
+          <End Role="MedicalNote" Type="PhekoModel.Store.MedicalNote" Multiplicity="1" />
+          <End Role="PatientMedicalNote" Type="PhekoModel.Store.PatientMedicalNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MedicalNote">
+              <PropertyRef Name="MedicalNoteId" />
+            </Principal>
+            <Dependent Role="PatientMedicalNote">
+              <PropertyRef Name="MedicalNoteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientMedicalNote_PatientConsultation">
+          <End Role="PatientConsultation" Type="PhekoModel.Store.PatientConsultation" Multiplicity="1" />
+          <End Role="PatientMedicalNote" Type="PhekoModel.Store.PatientMedicalNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PatientConsultation">
+              <PropertyRef Name="PatientConsultationId" />
+            </Principal>
+            <Dependent Role="PatientMedicalNote">
+              <PropertyRef Name="PatientConsultationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientPastMedicalHistory_PastMedicalHistory">
+          <End Role="PastMedicalHistory" Type="PhekoModel.Store.PastMedicalHistory" Multiplicity="1" />
+          <End Role="PatientPastMedicalHistory" Type="PhekoModel.Store.PatientPastMedicalHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PastMedicalHistory">
+              <PropertyRef Name="PastMedicalHistoryId" />
+            </Principal>
+            <Dependent Role="PatientPastMedicalHistory">
+              <PropertyRef Name="PastMedicalHistoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientPastMedicalHistory_Patient">
+          <End Role="Patient" Type="PhekoModel.Store.Patient" Multiplicity="1" />
+          <End Role="PatientPastMedicalHistory" Type="PhekoModel.Store.PatientPastMedicalHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="PatientPastMedicalHistory">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientVitalSign_PatientConsultation">
+          <End Role="PatientConsultation" Type="PhekoModel.Store.PatientConsultation" Multiplicity="1" />
+          <End Role="PatientVitalSign" Type="PhekoModel.Store.PatientVitalSign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PatientConsultation">
+              <PropertyRef Name="PatientConsultationId" />
+            </Principal>
+            <Dependent Role="PatientVitalSign">
+              <PropertyRef Name="PatientConsultationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientVitalSign_VitalSign">
+          <End Role="VitalSign" Type="PhekoModel.Store.VitalSign" Multiplicity="1" />
+          <End Role="PatientVitalSign" Type="PhekoModel.Store.PatientVitalSign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VitalSign">
+              <PropertyRef Name="VitalSignId" />
+            </Principal>
+            <Dependent Role="PatientVitalSign">
+              <PropertyRef Name="VitalSignId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecurityMenuItem_SecurityObject">
+          <End Role="SecurityObject" Type="PhekoModel.Store.SecurityObject" Multiplicity="1" />
+          <End Role="SecurityMenuItem" Type="PhekoModel.Store.SecurityMenuItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecurityObject">
+              <PropertyRef Name="SecurityObjectId" />
+            </Principal>
+            <Dependent Role="SecurityMenuItem">
+              <PropertyRef Name="SecurityObjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecurityObjectRight_SecurityObject">
+          <End Role="SecurityObject" Type="PhekoModel.Store.SecurityObject" Multiplicity="1" />
+          <End Role="SecurityObjectRight" Type="PhekoModel.Store.SecurityObjectRight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecurityObject">
+              <PropertyRef Name="SecurityObjectId" />
+            </Principal>
+            <Dependent Role="SecurityObjectRight">
+              <PropertyRef Name="SecurityObjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecurityObjectRight_SecurityRole">
+          <End Role="SecurityRole" Type="PhekoModel.Store.SecurityRole" Multiplicity="1" />
+          <End Role="SecurityObjectRight" Type="PhekoModel.Store.SecurityObjectRight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecurityRole">
+              <PropertyRef Name="SecurityRoleId" />
+            </Principal>
+            <Dependent Role="SecurityObjectRight">
+              <PropertyRef Name="SecurityRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecurityUserConnectionManager_SecurityUser">
+          <End Role="SecurityUser" Type="PhekoModel.Store.SecurityUser" Multiplicity="1" />
+          <End Role="SecurityUserConnectionManager" Type="PhekoModel.Store.SecurityUserConnectionManager" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecurityUser">
+              <PropertyRef Name="SecurityUserId" />
+            </Principal>
+            <Dependent Role="SecurityUserConnectionManager">
+              <PropertyRef Name="SecurityUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecurityUserRole_SecurityRole">
+          <End Role="SecurityRole" Type="PhekoModel.Store.SecurityRole" Multiplicity="1" />
+          <End Role="SecurityUserRole" Type="PhekoModel.Store.SecurityUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecurityRole">
+              <PropertyRef Name="SecurityRoleId" />
+            </Principal>
+            <Dependent Role="SecurityUserRole">
+              <PropertyRef Name="SecurityRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecurityUserRole_SecurityUser">
+          <End Role="SecurityUser" Type="PhekoModel.Store.SecurityUser" Multiplicity="1" />
+          <End Role="SecurityUserRole" Type="PhekoModel.Store.SecurityUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecurityUser">
+              <PropertyRef Name="SecurityUserId" />
+            </Principal>
+            <Dependent Role="SecurityUserRole">
+              <PropertyRef Name="SecurityUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="pat_Address" ReturnType="varchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientAddressId" Type="int" Mode="In" />
+          <Parameter Name="Delimeter" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="pat_MedicalAidPrincipalMemberLastName" ReturnType="varchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="pat_MedicalAidPrincipalMemberName" ReturnType="varchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="pat_MedicalAidPrincipalMemberTitle" ReturnType="varchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="pat_PatientChronicDeseaseSchedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientId" Type="int" Mode="In" />
+          <Parameter Name="InfoMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="pat_PatientClinicalExaminationSchedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientConsultationId" Type="int" Mode="In" />
+          <Parameter Name="InfoMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="pat_PatientConsultationSickNoteSchedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="int" Mode="In" />
+          <Parameter Name="PatientConsultationId" Type="int" Mode="In" />
+          <Parameter Name="InfoMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="pat_PatientDeseaseScreeningSchedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientId" Type="int" Mode="In" />
+          <Parameter Name="InfoMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="pat_PatientMedicalAidDependanciesSchedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientId" Type="int" Mode="In" />
+          <Parameter Name="InfoMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="pat_PatientMedicalMonitoringSchedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientConsultationId" Type="int" Mode="In" />
+          <Parameter Name="InfoMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="pat_PatientMedicalNoteDetailsSchedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientConsultationId" Type="int" Mode="In" />
+          <Parameter Name="PatientId" Type="int" Mode="In" />
+          <Parameter Name="InfoMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="pat_PatientMedicalNoteSchedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientConsultationId" Type="int" Mode="In" />
+          <Parameter Name="InfoMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="pat_PatientPastMedicalHistorySchedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientId" Type="int" Mode="In" />
+          <Parameter Name="InfoMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="pat_PatientSchedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientId" Type="int" Mode="In" />
+          <Parameter Name="UserId" Type="int" Mode="In" />
+          <Parameter Name="InfoMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="pat_PatientScriptSchedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="int" Mode="In" />
+          <Parameter Name="PatientConsultationId" Type="int" Mode="In" />
+          <Parameter Name="InfoMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="pat_PatientSickNoteSchedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientId" Type="int" Mode="In" />
+          <Parameter Name="InfoMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="pat_PatientVitalSignSchedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientId" Type="int" Mode="In" />
+          <Parameter Name="InfoMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="pat_SaveCheck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientId" Type="int" Mode="In" />
+          <Parameter Name="Title" Type="varchar" Mode="In" />
+          <Parameter Name="FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="LastName" Type="varchar" Mode="In" />
+          <Parameter Name="Gender" Type="varchar" Mode="In" />
+          <Parameter Name="EthnicGroup" Type="varchar" Mode="In" />
+          <Parameter Name="BirthDate" Type="datetime" Mode="In" />
+          <Parameter Name="IDNumber" Type="varchar" Mode="In" />
+          <Parameter Name="MaritalStatus" Type="varchar" Mode="In" />
+          <Parameter Name="PrincipalMemberInd" Type="smallint" Mode="In" />
+          <Parameter Name="GUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="InfoMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="sec_ConsutlationInd" ReturnType="smallint" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SecurityUserId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sec_GetSystemUserId" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sec_MedicalCheckUpInd" ReturnType="smallint" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SecurityUserId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sec_MedicalNoteInd" ReturnType="smallint" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SecurityUserId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sec_PastMedicalHistoryInd" ReturnType="smallint" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SecurityUserId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sec_UserRoleAccessInd" ReturnType="smallint" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SecurityUserId" Type="int" Mode="In" />
+          <Parameter Name="SecurityRoleName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sec_VitalSignInd" ReturnType="smallint" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SecurityUserId" Type="int" Mode="In" />
+        </Function>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PhekoModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PhekoEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="ChronicDeseases" EntityType="PhekoModel.ChronicDesease" />
+          <EntitySet Name="ClinicalExaminations" EntityType="PhekoModel.ClinicalExamination" />
+          <EntitySet Name="Countries" EntityType="PhekoModel.Country" />
+          <EntitySet Name="DeseaseScreenings" EntityType="PhekoModel.DeseaseScreening" />
+          <EntitySet Name="Doctors" EntityType="PhekoModel.Doctor" />
+          <EntitySet Name="Fields" EntityType="PhekoModel.Field" />
+          <EntitySet Name="FieldValues" EntityType="PhekoModel.FieldValue" />
+          <EntitySet Name="MedicalMonitorings" EntityType="PhekoModel.MedicalMonitoring" />
+          <EntitySet Name="MedicalNotes" EntityType="PhekoModel.MedicalNote" />
+          <EntitySet Name="PastMedicalHistories" EntityType="PhekoModel.PastMedicalHistory" />
+          <EntitySet Name="Patients" EntityType="PhekoModel.Patient" />
+          <EntitySet Name="PatientAddresses" EntityType="PhekoModel.PatientAddress" />
+          <EntitySet Name="PatientChronicDeseases" EntityType="PhekoModel.PatientChronicDesease" />
+          <EntitySet Name="PatientClinicalExaminations" EntityType="PhekoModel.PatientClinicalExamination" />
+          <EntitySet Name="PatientConsultations" EntityType="PhekoModel.PatientConsultation" />
+          <EntitySet Name="PatientConsultationSickNotes" EntityType="PhekoModel.PatientConsultationSickNote" />
+          <EntitySet Name="PatientDeseaseScreenings" EntityType="PhekoModel.PatientDeseaseScreening" />
+          <EntitySet Name="PatientMedicalAidDependancies" EntityType="PhekoModel.PatientMedicalAidDependancy" />
+          <EntitySet Name="PatientMedicalMonitorings" EntityType="PhekoModel.PatientMedicalMonitoring" />
+          <EntitySet Name="PatientMedicalNotes" EntityType="PhekoModel.PatientMedicalNote" />
+          <EntitySet Name="PatientPastMedicalHistories" EntityType="PhekoModel.PatientPastMedicalHistory" />
+          <EntitySet Name="PatientVitalSigns" EntityType="PhekoModel.PatientVitalSign" />
+          <EntitySet Name="Provinces" EntityType="PhekoModel.Province" />
+          <EntitySet Name="SecurityMenuItems" EntityType="PhekoModel.SecurityMenuItem" />
+          <EntitySet Name="SecurityObjects" EntityType="PhekoModel.SecurityObject" />
+          <EntitySet Name="SecurityObjectRights" EntityType="PhekoModel.SecurityObjectRight" />
+          <EntitySet Name="SecurityRoles" EntityType="PhekoModel.SecurityRole" />
+          <EntitySet Name="SecurityUsers" EntityType="PhekoModel.SecurityUser" />
+          <EntitySet Name="SecurityUserConnectionManagers" EntityType="PhekoModel.SecurityUserConnectionManager" />
+          <EntitySet Name="SecurityUserRoles" EntityType="PhekoModel.SecurityUserRole" />
+          <EntitySet Name="VitalSigns" EntityType="PhekoModel.VitalSign" />
+          <AssociationSet Name="FK_PatientChronicDesease_ChronicDesease" Association="PhekoModel.FK_PatientChronicDesease_ChronicDesease">
+            <End Role="ChronicDesease" EntitySet="ChronicDeseases" />
+            <End Role="PatientChronicDesease" EntitySet="PatientChronicDeseases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientClinicalExamination_ClinicalExamination" Association="PhekoModel.FK_PatientClinicalExamination_ClinicalExamination">
+            <End Role="ClinicalExamination" EntitySet="ClinicalExaminations" />
+            <End Role="PatientClinicalExamination" EntitySet="PatientClinicalExaminations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientDeseaseScreening_DeseaseScreening" Association="PhekoModel.FK_PatientDeseaseScreening_DeseaseScreening">
+            <End Role="DeseaseScreening" EntitySet="DeseaseScreenings" />
+            <End Role="PatientDeseaseScreening" EntitySet="PatientDeseaseScreenings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doctor_SecurityUser" Association="PhekoModel.FK_Doctor_SecurityUser">
+            <End Role="SecurityUser" EntitySet="SecurityUsers" />
+            <End Role="Doctor" EntitySet="Doctors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientConsultation_Doctor" Association="PhekoModel.FK_PatientConsultation_Doctor">
+            <End Role="Doctor" EntitySet="Doctors" />
+            <End Role="PatientConsultation" EntitySet="PatientConsultations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FieldValue_Field" Association="PhekoModel.FK_FieldValue_Field">
+            <End Role="Field" EntitySet="Fields" />
+            <End Role="FieldValue" EntitySet="FieldValues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientMedicalMonitoring_MedicalMonitoring" Association="PhekoModel.FK_PatientMedicalMonitoring_MedicalMonitoring">
+            <End Role="MedicalMonitoring" EntitySet="MedicalMonitorings" />
+            <End Role="PatientMedicalMonitoring" EntitySet="PatientMedicalMonitorings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientMedicalNote_MedicalNote" Association="PhekoModel.FK_PatientMedicalNote_MedicalNote">
+            <End Role="MedicalNote" EntitySet="MedicalNotes" />
+            <End Role="PatientMedicalNote" EntitySet="PatientMedicalNotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientPastMedicalHistory_PastMedicalHistory" Association="PhekoModel.FK_PatientPastMedicalHistory_PastMedicalHistory">
+            <End Role="PastMedicalHistory" EntitySet="PastMedicalHistories" />
+            <End Role="PatientPastMedicalHistory" EntitySet="PatientPastMedicalHistories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Patient_PatientPhysicalAddress" Association="PhekoModel.FK_Patient_PatientPhysicalAddress">
+            <End Role="PatientAddress" EntitySet="PatientAddresses" />
+            <End Role="Patient" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Patient_PatientPostalAddress" Association="PhekoModel.FK_Patient_PatientPostalAddress">
+            <End Role="PatientAddress" EntitySet="PatientAddresses" />
+            <End Role="Patient" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientChronicDesease_Patient" Association="PhekoModel.FK_PatientChronicDesease_Patient">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="PatientChronicDesease" EntitySet="PatientChronicDeseases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientConsultation_Patient" Association="PhekoModel.FK_PatientConsultation_Patient">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="PatientConsultation" EntitySet="PatientConsultations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientConsultationSickNote_Patient" Association="PhekoModel.FK_PatientConsultationSickNote_Patient">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="PatientConsultationSickNote" EntitySet="PatientConsultationSickNotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientDeseaseScreening_Patient" Association="PhekoModel.FK_PatientDeseaseScreening_Patient">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="PatientDeseaseScreening" EntitySet="PatientDeseaseScreenings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientMedicalAidDependancies_Patient" Association="PhekoModel.FK_PatientMedicalAidDependancies_Patient">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="PatientMedicalAidDependancies" EntitySet="PatientMedicalAidDependancies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientPastMedicalHistory_Patient" Association="PhekoModel.FK_PatientPastMedicalHistory_Patient">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="PatientPastMedicalHistory" EntitySet="PatientPastMedicalHistories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientClinicalExamination_PatientConsultation" Association="PhekoModel.FK_PatientClinicalExamination_PatientConsultation">
+            <End Role="PatientConsultation" EntitySet="PatientConsultations" />
+            <End Role="PatientClinicalExamination" EntitySet="PatientClinicalExaminations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientConsultationSickNote_PatientConsultation" Association="PhekoModel.FK_PatientConsultationSickNote_PatientConsultation">
+            <End Role="PatientConsultation" EntitySet="PatientConsultations" />
+            <End Role="PatientConsultationSickNote" EntitySet="PatientConsultationSickNotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientMedicalMonitoring_PatientConsultation" Association="PhekoModel.FK_PatientMedicalMonitoring_PatientConsultation">
+            <End Role="PatientConsultation" EntitySet="PatientConsultations" />
+            <End Role="PatientMedicalMonitoring" EntitySet="PatientMedicalMonitorings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientMedicalNote_PatientConsultation" Association="PhekoModel.FK_PatientMedicalNote_PatientConsultation">
+            <End Role="PatientConsultation" EntitySet="PatientConsultations" />
+            <End Role="PatientMedicalNote" EntitySet="PatientMedicalNotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientVitalSign_PatientConsultation" Association="PhekoModel.FK_PatientVitalSign_PatientConsultation">
+            <End Role="PatientConsultation" EntitySet="PatientConsultations" />
+            <End Role="PatientVitalSign" EntitySet="PatientVitalSigns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientVitalSign_VitalSign" Association="PhekoModel.FK_PatientVitalSign_VitalSign">
+            <End Role="VitalSign" EntitySet="VitalSigns" />
+            <End Role="PatientVitalSign" EntitySet="PatientVitalSigns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecurityMenuItem_SecurityObject" Association="PhekoModel.FK_SecurityMenuItem_SecurityObject">
+            <End Role="SecurityObject" EntitySet="SecurityObjects" />
+            <End Role="SecurityMenuItem" EntitySet="SecurityMenuItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecurityObjectRight_SecurityObject" Association="PhekoModel.FK_SecurityObjectRight_SecurityObject">
+            <End Role="SecurityObject" EntitySet="SecurityObjects" />
+            <End Role="SecurityObjectRight" EntitySet="SecurityObjectRights" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecurityObjectRight_SecurityRole" Association="PhekoModel.FK_SecurityObjectRight_SecurityRole">
+            <End Role="SecurityRole" EntitySet="SecurityRoles" />
+            <End Role="SecurityObjectRight" EntitySet="SecurityObjectRights" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecurityUserRole_SecurityRole" Association="PhekoModel.FK_SecurityUserRole_SecurityRole">
+            <End Role="SecurityRole" EntitySet="SecurityRoles" />
+            <End Role="SecurityUserRole" EntitySet="SecurityUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecurityUserConnectionManager_SecurityUser" Association="PhekoModel.FK_SecurityUserConnectionManager_SecurityUser">
+            <End Role="SecurityUser" EntitySet="SecurityUsers" />
+            <End Role="SecurityUserConnectionManager" EntitySet="SecurityUserConnectionManagers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecurityUserRole_SecurityUser" Association="PhekoModel.FK_SecurityUserRole_SecurityUser">
+            <End Role="SecurityUser" EntitySet="SecurityUsers" />
+            <End Role="SecurityUserRole" EntitySet="SecurityUserRoles" />
+          </AssociationSet>
+          <FunctionImport Name="pat_PatientChronicDeseaseSchedule" ReturnType="Collection(PhekoModel.pat_PatientChronicDeseaseSchedule_Result)">
+            <Parameter Name="PatientId" Mode="In" Type="Int32" />
+            <Parameter Name="InfoMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pat_PatientClinicalExaminationSchedule" ReturnType="Collection(PhekoModel.pat_PatientClinicalExaminationSchedule_Result)">
+            <Parameter Name="PatientConsultationId" Mode="In" Type="Int32" />
+            <Parameter Name="InfoMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pat_PatientConsultationSickNoteSchedule">
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="PatientConsultationId" Mode="In" Type="Int32" />
+            <Parameter Name="InfoMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pat_PatientDeseaseScreeningSchedule" ReturnType="Collection(PhekoModel.pat_PatientDeseaseScreeningSchedule_Result)">
+            <Parameter Name="PatientId" Mode="In" Type="Int32" />
+            <Parameter Name="InfoMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pat_PatientMedicalAidDependanciesSchedule" ReturnType="Collection(PhekoModel.pat_PatientMedicalAidDependanciesSchedule_Result)">
+            <Parameter Name="PatientId" Mode="In" Type="Int32" />
+            <Parameter Name="InfoMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pat_PatientMedicalMonitoringSchedule" ReturnType="Collection(PhekoModel.pat_PatientMedicalMonitoringSchedule_Result)">
+            <Parameter Name="PatientConsultationId" Mode="In" Type="Int32" />
+            <Parameter Name="InfoMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pat_PatientMedicalNoteDetailsSchedule" ReturnType="Collection(PhekoModel.pat_PatientMedicalNoteDetailsSchedule_Result)">
+            <Parameter Name="PatientConsultationId" Mode="In" Type="Int32" />
+            <Parameter Name="PatientId" Mode="In" Type="Int32" />
+            <Parameter Name="InfoMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pat_PatientMedicalNoteSchedule" ReturnType="Collection(PhekoModel.pat_PatientMedicalNoteSchedule_Result)">
+            <Parameter Name="PatientConsultationId" Mode="In" Type="Int32" />
+            <Parameter Name="InfoMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pat_PatientPastMedicalHistorySchedule" ReturnType="Collection(PhekoModel.pat_PatientPastMedicalHistorySchedule_Result)">
+            <Parameter Name="PatientId" Mode="In" Type="Int32" />
+            <Parameter Name="InfoMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pat_PatientSchedule" ReturnType="Collection(PhekoModel.pat_PatientSchedule_Result)">
+            <Parameter Name="PatientId" Mode="In" Type="Int32" />
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="InfoMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pat_PatientScriptSchedule">
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="PatientConsultationId" Mode="In" Type="Int32" />
+            <Parameter Name="InfoMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pat_PatientSickNoteSchedule" ReturnType="Collection(PhekoModel.pat_PatientSickNoteSchedule_Result)">
+            <Parameter Name="PatientId" Mode="In" Type="Int32" />
+            <Parameter Name="InfoMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pat_PatientVitalSignSchedule" ReturnType="Collection(PhekoModel.pat_PatientVitalSignSchedule_Result)">
+            <Parameter Name="PatientId" Mode="In" Type="Int32" />
+            <Parameter Name="InfoMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pat_SaveCheck">
+            <Parameter Name="PatientId" Mode="In" Type="Int32" />
+            <Parameter Name="Title" Mode="In" Type="String" />
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="Gender" Mode="In" Type="String" />
+            <Parameter Name="EthnicGroup" Mode="In" Type="String" />
+            <Parameter Name="BirthDate" Mode="In" Type="DateTime" />
+            <Parameter Name="IDNumber" Mode="In" Type="String" />
+            <Parameter Name="MaritalStatus" Mode="In" Type="String" />
+            <Parameter Name="PrincipalMemberInd" Mode="In" Type="Int16" />
+            <Parameter Name="GUID" Mode="In" Type="Guid" />
+            <Parameter Name="InfoMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="ChronicDesease">
+          <Key>
+            <PropertyRef Name="ChronicDeseaseId" />
+          </Key>
+          <Property Name="ChronicDeseaseId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SortKey" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PatientChronicDeseases" Relationship="PhekoModel.FK_PatientChronicDesease_ChronicDesease" FromRole="ChronicDesease" ToRole="PatientChronicDesease" />
+        </EntityType>
+        <EntityType Name="ClinicalExamination">
+          <Key>
+            <PropertyRef Name="ClinicalExaminationId" />
+          </Key>
+          <Property Name="ClinicalExaminationId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SortKey" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PatientClinicalExaminations" Relationship="PhekoModel.FK_PatientClinicalExamination_ClinicalExamination" FromRole="ClinicalExamination" ToRole="PatientClinicalExamination" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CountryName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CountryCode" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="DeseaseScreening">
+          <Key>
+            <PropertyRef Name="DeseaseScreeningId" />
+          </Key>
+          <Property Name="DeseaseScreeningId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SortKey" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PatientDeseaseScreenings" Relationship="PhekoModel.FK_PatientDeseaseScreening_DeseaseScreening" FromRole="DeseaseScreening" ToRole="PatientDeseaseScreening" />
+        </EntityType>
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="DoctorId" />
+          </Key>
+          <Property Name="DoctorId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="SecurityUserId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SecurityUser" Relationship="PhekoModel.FK_Doctor_SecurityUser" FromRole="Doctor" ToRole="SecurityUser" />
+          <NavigationProperty Name="PatientConsultations" Relationship="PhekoModel.FK_PatientConsultation_Doctor" FromRole="Doctor" ToRole="PatientConsultation" />
+        </EntityType>
+        <EntityType Name="Field">
+          <Key>
+            <PropertyRef Name="FieldId" />
+          </Key>
+          <Property Name="FieldId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TableName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FieldName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DataType" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="FieldValues" Relationship="PhekoModel.FK_FieldValue_Field" FromRole="Field" ToRole="FieldValue" />
+        </EntityType>
+        <EntityType Name="FieldValue">
+          <Key>
+            <PropertyRef Name="FieldValueId" />
+          </Key>
+          <Property Name="FieldValueId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FieldId" Type="Int32" Nullable="false" />
+          <Property Name="SortOrder" Type="Int32" />
+          <Property Name="PropertyValue" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DisplayValue" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Field" Relationship="PhekoModel.FK_FieldValue_Field" FromRole="FieldValue" ToRole="Field" />
+        </EntityType>
+        <EntityType Name="MedicalMonitoring">
+          <Key>
+            <PropertyRef Name="MedicalMonitoringId" />
+          </Key>
+          <Property Name="MedicalMonitoringId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SortKey" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PatientMedicalMonitorings" Relationship="PhekoModel.FK_PatientMedicalMonitoring_MedicalMonitoring" FromRole="MedicalMonitoring" ToRole="PatientMedicalMonitoring" />
+        </EntityType>
+        <EntityType Name="MedicalNote">
+          <Key>
+            <PropertyRef Name="MedicalNoteId" />
+          </Key>
+          <Property Name="MedicalNoteId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SortKey" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PatientMedicalNotes" Relationship="PhekoModel.FK_PatientMedicalNote_MedicalNote" FromRole="MedicalNote" ToRole="PatientMedicalNote" />
+        </EntityType>
+        <EntityType Name="PastMedicalHistory">
+          <Key>
+            <PropertyRef Name="PastMedicalHistoryId" />
+          </Key>
+          <Property Name="PastMedicalHistoryId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SortKey" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PatientPastMedicalHistories" Relationship="PhekoModel.FK_PatientPastMedicalHistory_PastMedicalHistory" FromRole="PastMedicalHistory" ToRole="PatientPastMedicalHistory" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="PatientId" />
+          </Key>
+          <Property Name="PatientId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Gender" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="EthnicGroup" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="BirthDate" Type="DateTime" Precision="3" />
+          <Property Name="IDNumber" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="MobileNumber" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="HomeTelephoneCode" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="HomeTelephoneNumber" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="WorkTelephoneCode" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="WorkTelephoneNumber" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="MaritalStatus" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="MarriageType" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PrefferedContactType" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PhysicalAddressId" Type="Int32" />
+          <Property Name="PostalAddressId" Type="Int32" />
+          <Property Name="MedicalAidName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="MedicalAidScheme" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="MedicalAidNumber" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="PrincipalMemberInd" Type="Boolean" />
+          <Property Name="PrefferedContactMethod" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SourceOfDiscovery" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="MedicalAidInd" Type="Boolean" />
+          <Property Name="IDType" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PhysicalAddress" Relationship="PhekoModel.FK_Patient_PatientPhysicalAddress" FromRole="Patient" ToRole="PatientAddress" />
+          <NavigationProperty Name="PostalAddress" Relationship="PhekoModel.FK_Patient_PatientPostalAddress" FromRole="Patient" ToRole="PatientAddress" />
+          <NavigationProperty Name="PatientChronicDeseases" Relationship="PhekoModel.FK_PatientChronicDesease_Patient" FromRole="Patient" ToRole="PatientChronicDesease" />
+          <NavigationProperty Name="PatientConsultations" Relationship="PhekoModel.FK_PatientConsultation_Patient" FromRole="Patient" ToRole="PatientConsultation" />
+          <NavigationProperty Name="PatientConsultationSickNotes" Relationship="PhekoModel.FK_PatientConsultationSickNote_Patient" FromRole="Patient" ToRole="PatientConsultationSickNote" />
+          <NavigationProperty Name="PatientDeseaseScreenings" Relationship="PhekoModel.FK_PatientDeseaseScreening_Patient" FromRole="Patient" ToRole="PatientDeseaseScreening" />
+          <NavigationProperty Name="PatientMedicalAidDependancies" Relationship="PhekoModel.FK_PatientMedicalAidDependancies_Patient" FromRole="Patient" ToRole="PatientMedicalAidDependancies" />
+          <NavigationProperty Name="PatientPastMedicalHistories" Relationship="PhekoModel.FK_PatientPastMedicalHistory_Patient" FromRole="Patient" ToRole="PatientPastMedicalHistory" />
+        </EntityType>
+        <EntityType Name="PatientAddress">
+          <Key>
+            <PropertyRef Name="PatientAddressId" />
+          </Key>
+          <Property Name="PatientAddressId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Line1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Line2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Suburb" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="ProvinceId" Type="Int32" />
+          <Property Name="CountryId" Type="Int32" />
+          <NavigationProperty Name="Patients" Relationship="PhekoModel.FK_Patient_PatientPhysicalAddress" FromRole="PatientAddress" ToRole="Patient" />
+          <NavigationProperty Name="Patients1" Relationship="PhekoModel.FK_Patient_PatientPostalAddress" FromRole="PatientAddress" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="PatientChronicDesease">
+          <Key>
+            <PropertyRef Name="PatientChronicDeseaseId" />
+          </Key>
+          <Property Name="PatientChronicDeseaseId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="Int32" Nullable="false" />
+          <Property Name="ChronicDeseaseId" Type="Int32" Nullable="false" />
+          <Property Name="YearOfDiagnoses" Type="Int32" />
+          <Property Name="Value" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ChronicDesease" Relationship="PhekoModel.FK_PatientChronicDesease_ChronicDesease" FromRole="PatientChronicDesease" ToRole="ChronicDesease" />
+          <NavigationProperty Name="Patient" Relationship="PhekoModel.FK_PatientChronicDesease_Patient" FromRole="PatientChronicDesease" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="PatientClinicalExamination">
+          <Key>
+            <PropertyRef Name="PatientClinicalExaminationId" />
+          </Key>
+          <Property Name="PatientClinicalExaminationId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientConsultationId" Type="Int32" Nullable="false" />
+          <Property Name="ClinicalExaminationId" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ClinicalExamination" Relationship="PhekoModel.FK_PatientClinicalExamination_ClinicalExamination" FromRole="PatientClinicalExamination" ToRole="ClinicalExamination" />
+          <NavigationProperty Name="PatientConsultation" Relationship="PhekoModel.FK_PatientClinicalExamination_PatientConsultation" FromRole="PatientClinicalExamination" ToRole="PatientConsultation" />
+        </EntityType>
+        <EntityType Name="PatientConsultation">
+          <Key>
+            <PropertyRef Name="PatientConsultationId" />
+          </Key>
+          <Property Name="PatientConsultationId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DoctorId" Type="Int32" Nullable="false" />
+          <Property Name="PatientId" Type="Int32" Nullable="false" />
+          <Property Name="ConsultationStatus" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Doctor" Relationship="PhekoModel.FK_PatientConsultation_Doctor" FromRole="PatientConsultation" ToRole="Doctor" />
+          <NavigationProperty Name="Patient" Relationship="PhekoModel.FK_PatientConsultation_Patient" FromRole="PatientConsultation" ToRole="Patient" />
+          <NavigationProperty Name="PatientClinicalExaminations" Relationship="PhekoModel.FK_PatientClinicalExamination_PatientConsultation" FromRole="PatientConsultation" ToRole="PatientClinicalExamination" />
+          <NavigationProperty Name="PatientConsultationSickNotes" Relationship="PhekoModel.FK_PatientConsultationSickNote_PatientConsultation" FromRole="PatientConsultation" ToRole="PatientConsultationSickNote" />
+          <NavigationProperty Name="PatientMedicalMonitorings" Relationship="PhekoModel.FK_PatientMedicalMonitoring_PatientConsultation" FromRole="PatientConsultation" ToRole="PatientMedicalMonitoring" />
+          <NavigationProperty Name="PatientMedicalNotes" Relationship="PhekoModel.FK_PatientMedicalNote_PatientConsultation" FromRole="PatientConsultation" ToRole="PatientMedicalNote" />
+          <NavigationProperty Name="PatientVitalSigns" Relationship="PhekoModel.FK_PatientVitalSign_PatientConsultation" FromRole="PatientConsultation" ToRole="PatientVitalSign" />
+        </EntityType>
+        <EntityType Name="PatientConsultationSickNote">
+          <Key>
+            <PropertyRef Name="PatientConsultationSickNoteId" />
+          </Key>
+          <Property Name="PatientConsultationSickNoteId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientConsultationId" Type="Int32" Nullable="false" />
+          <Property Name="PatientId" Type="Int32" Nullable="false" />
+          <Property Name="SicknessReason" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="Diagnoses" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Patient" Relationship="PhekoModel.FK_PatientConsultationSickNote_Patient" FromRole="PatientConsultationSickNote" ToRole="Patient" />
+          <NavigationProperty Name="PatientConsultation" Relationship="PhekoModel.FK_PatientConsultationSickNote_PatientConsultation" FromRole="PatientConsultationSickNote" ToRole="PatientConsultation" />
+        </EntityType>
+        <EntityType Name="PatientDeseaseScreening">
+          <Key>
+            <PropertyRef Name="PatientDeseaseScreeningId" />
+          </Key>
+          <Property Name="PatientDeseaseScreeningId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="Int32" Nullable="false" />
+          <Property Name="DeseaseScreeningId" Type="Int32" Nullable="false" />
+          <Property Name="YearOfScreening" Type="Int32" />
+          <Property Name="Value" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="DeseaseScreening" Relationship="PhekoModel.FK_PatientDeseaseScreening_DeseaseScreening" FromRole="PatientDeseaseScreening" ToRole="DeseaseScreening" />
+          <NavigationProperty Name="Patient" Relationship="PhekoModel.FK_PatientDeseaseScreening_Patient" FromRole="PatientDeseaseScreening" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="PatientMedicalAidDependancy">
+          <Key>
+            <PropertyRef Name="PatientMedicalAidDependanciesId" />
+          </Key>
+          <Property Name="PatientMedicalAidDependanciesId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="Int32" Nullable="false" />
+          <Property Name="FirstFullName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MedicalAidCode" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="BirthDate" Type="DateTime" Precision="3" />
+          <Property Name="Relationship" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PrincipalInd" Type="Boolean" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Patient" Relationship="PhekoModel.FK_PatientMedicalAidDependancies_Patient" FromRole="PatientMedicalAidDependancies" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="PatientMedicalMonitoring">
+          <Key>
+            <PropertyRef Name="PatientMedicalMonitoringId" />
+          </Key>
+          <Property Name="PatientMedicalMonitoringId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientConsultationId" Type="Int32" Nullable="false" />
+          <Property Name="MedicalMonitoringId" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="MedicalMonitoring" Relationship="PhekoModel.FK_PatientMedicalMonitoring_MedicalMonitoring" FromRole="PatientMedicalMonitoring" ToRole="MedicalMonitoring" />
+          <NavigationProperty Name="PatientConsultation" Relationship="PhekoModel.FK_PatientMedicalMonitoring_PatientConsultation" FromRole="PatientMedicalMonitoring" ToRole="PatientConsultation" />
+        </EntityType>
+        <EntityType Name="PatientMedicalNote">
+          <Key>
+            <PropertyRef Name="PatientMedicalNoteId" />
+          </Key>
+          <Property Name="PatientMedicalNoteId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientConsultationId" Type="Int32" Nullable="false" />
+          <Property Name="MedicalNoteId" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="MedicalNote" Relationship="PhekoModel.FK_PatientMedicalNote_MedicalNote" FromRole="PatientMedicalNote" ToRole="MedicalNote" />
+          <NavigationProperty Name="PatientConsultation" Relationship="PhekoModel.FK_PatientMedicalNote_PatientConsultation" FromRole="PatientMedicalNote" ToRole="PatientConsultation" />
+        </EntityType>
+        <EntityType Name="PatientPastMedicalHistory">
+          <Key>
+            <PropertyRef Name="PatientPastMedicalHistoryId" />
+          </Key>
+          <Property Name="PatientPastMedicalHistoryId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="Int32" Nullable="false" />
+          <Property Name="PastMedicalHistoryId" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PastMedicalHistory" Relationship="PhekoModel.FK_PatientPastMedicalHistory_PastMedicalHistory" FromRole="PatientPastMedicalHistory" ToRole="PastMedicalHistory" />
+          <NavigationProperty Name="Patient" Relationship="PhekoModel.FK_PatientPastMedicalHistory_Patient" FromRole="PatientPastMedicalHistory" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="PatientVitalSign">
+          <Key>
+            <PropertyRef Name="PatientVitalSignId" />
+          </Key>
+          <Property Name="PatientVitalSignId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientConsultationId" Type="Int32" Nullable="false" />
+          <Property Name="VitalSignId" Type="Int32" Nullable="false" />
+          <Property Name="VitalSignValue" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PatientConsultation" Relationship="PhekoModel.FK_PatientVitalSign_PatientConsultation" FromRole="PatientVitalSign" ToRole="PatientConsultation" />
+          <NavigationProperty Name="VitalSign" Relationship="PhekoModel.FK_PatientVitalSign_VitalSign" FromRole="PatientVitalSign" ToRole="VitalSign" />
+        </EntityType>
+        <EntityType Name="Province">
+          <Key>
+            <PropertyRef Name="ProvinceId" />
+          </Key>
+          <Property Name="ProvinceId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ProvinceName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SecurityMenuItem">
+          <Key>
+            <PropertyRef Name="SecurityMenuItemId" />
+          </Key>
+          <Property Name="SecurityMenuItemId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="SecurityObjectId" Type="Int32" Nullable="false" />
+          <Property Name="MenuItem" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MenuPath" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MenuOrder" Type="Int32" Nullable="false" />
+          <Property Name="MenuType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SecurityObject" Relationship="PhekoModel.FK_SecurityMenuItem_SecurityObject" FromRole="SecurityMenuItem" ToRole="SecurityObject" />
+        </EntityType>
+        <EntityType Name="SecurityObject">
+          <Key>
+            <PropertyRef Name="SecurityObjectId" />
+          </Key>
+          <Property Name="SecurityObjectId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ObjectName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SecurityMenuItems" Relationship="PhekoModel.FK_SecurityMenuItem_SecurityObject" FromRole="SecurityObject" ToRole="SecurityMenuItem" />
+          <NavigationProperty Name="SecurityObjectRights" Relationship="PhekoModel.FK_SecurityObjectRight_SecurityObject" FromRole="SecurityObject" ToRole="SecurityObjectRight" />
+        </EntityType>
+        <EntityType Name="SecurityObjectRight">
+          <Key>
+            <PropertyRef Name="SecurityObjectRightId" />
+          </Key>
+          <Property Name="SecurityObjectRightId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="SecurityObjectId" Type="Int32" Nullable="false" />
+          <Property Name="AccessType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SecurityRoleId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SecurityObject" Relationship="PhekoModel.FK_SecurityObjectRight_SecurityObject" FromRole="SecurityObjectRight" ToRole="SecurityObject" />
+          <NavigationProperty Name="SecurityRole" Relationship="PhekoModel.FK_SecurityObjectRight_SecurityRole" FromRole="SecurityObjectRight" ToRole="SecurityRole" />
+        </EntityType>
+        <EntityType Name="SecurityRole">
+          <Key>
+            <PropertyRef Name="SecurityRoleId" />
+          </Key>
+          <Property Name="SecurityRoleId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="SecurityRoleName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SecurityObjectRights" Relationship="PhekoModel.FK_SecurityObjectRight_SecurityRole" FromRole="SecurityRole" ToRole="SecurityObjectRight" />
+          <NavigationProperty Name="SecurityUserRoles" Relationship="PhekoModel.FK_SecurityUserRole_SecurityRole" FromRole="SecurityRole" ToRole="SecurityUserRole" />
+        </EntityType>
+        <EntityType Name="SecurityUser">
+          <Key>
+            <PropertyRef Name="SecurityUserId" />
+          </Key>
+          <Property Name="SecurityUserId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Title" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Initials" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IDNumber" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="BirthDate" Type="DateTime" Precision="3" />
+          <Property Name="Gender" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="WorkTelephoneCode" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="WorkTelephoneNumber" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="FaxCode" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="FaxNumber" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="MobileNumber" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="EmployeeNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DisabledDate" Type="DateTime" Precision="3" />
+          <Property Name="PasswordSalt" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="Password" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="FirstTimeLogInInd" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Doctors" Relationship="PhekoModel.FK_Doctor_SecurityUser" FromRole="SecurityUser" ToRole="Doctor" />
+          <NavigationProperty Name="SecurityUserConnectionManagers" Relationship="PhekoModel.FK_SecurityUserConnectionManager_SecurityUser" FromRole="SecurityUser" ToRole="SecurityUserConnectionManager" />
+          <NavigationProperty Name="SecurityUserRoles" Relationship="PhekoModel.FK_SecurityUserRole_SecurityUser" FromRole="SecurityUser" ToRole="SecurityUserRole" />
+        </EntityType>
+        <EntityType Name="SecurityUserConnectionManager">
+          <Key>
+            <PropertyRef Name="SecurityUserConnectionManagerId" />
+          </Key>
+          <Property Name="SecurityUserConnectionManagerId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="SecurityUserId" Type="Int32" Nullable="false" />
+          <Property Name="ConnectionId" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SecurityUser" Relationship="PhekoModel.FK_SecurityUserConnectionManager_SecurityUser" FromRole="SecurityUserConnectionManager" ToRole="SecurityUser" />
+        </EntityType>
+        <EntityType Name="SecurityUserRole">
+          <Key>
+            <PropertyRef Name="SecurityUserRoleId" />
+          </Key>
+          <Property Name="SecurityUserRoleId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="SecurityUserId" Type="Int32" Nullable="false" />
+          <Property Name="SecurityRoleId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SecurityRole" Relationship="PhekoModel.FK_SecurityUserRole_SecurityRole" FromRole="SecurityUserRole" ToRole="SecurityRole" />
+          <NavigationProperty Name="SecurityUser" Relationship="PhekoModel.FK_SecurityUserRole_SecurityUser" FromRole="SecurityUserRole" ToRole="SecurityUser" />
+        </EntityType>
+        <EntityType Name="VitalSign">
+          <Key>
+            <PropertyRef Name="VitalSignId" />
+          </Key>
+          <Property Name="VitalSignId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SortKey" Type="Int32" />
+          <NavigationProperty Name="PatientVitalSigns" Relationship="PhekoModel.FK_PatientVitalSign_VitalSign" FromRole="VitalSign" ToRole="PatientVitalSign" />
+        </EntityType>
+        <Association Name="FK_PatientChronicDesease_ChronicDesease">
+          <End Role="ChronicDesease" Type="PhekoModel.ChronicDesease" Multiplicity="1" />
+          <End Role="PatientChronicDesease" Type="PhekoModel.PatientChronicDesease" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChronicDesease">
+              <PropertyRef Name="ChronicDeseaseId" />
+            </Principal>
+            <Dependent Role="PatientChronicDesease">
+              <PropertyRef Name="ChronicDeseaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientClinicalExamination_ClinicalExamination">
+          <End Role="ClinicalExamination" Type="PhekoModel.ClinicalExamination" Multiplicity="1" />
+          <End Role="PatientClinicalExamination" Type="PhekoModel.PatientClinicalExamination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClinicalExamination">
+              <PropertyRef Name="ClinicalExaminationId" />
+            </Principal>
+            <Dependent Role="PatientClinicalExamination">
+              <PropertyRef Name="ClinicalExaminationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientDeseaseScreening_DeseaseScreening">
+          <End Role="DeseaseScreening" Type="PhekoModel.DeseaseScreening" Multiplicity="1" />
+          <End Role="PatientDeseaseScreening" Type="PhekoModel.PatientDeseaseScreening" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeseaseScreening">
+              <PropertyRef Name="DeseaseScreeningId" />
+            </Principal>
+            <Dependent Role="PatientDeseaseScreening">
+              <PropertyRef Name="DeseaseScreeningId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doctor_SecurityUser">
+          <End Role="SecurityUser" Type="PhekoModel.SecurityUser" Multiplicity="1" />
+          <End Role="Doctor" Type="PhekoModel.Doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecurityUser">
+              <PropertyRef Name="SecurityUserId" />
+            </Principal>
+            <Dependent Role="Doctor">
+              <PropertyRef Name="SecurityUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientConsultation_Doctor">
+          <End Role="Doctor" Type="PhekoModel.Doctor" Multiplicity="1" />
+          <End Role="PatientConsultation" Type="PhekoModel.PatientConsultation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="DoctorId" />
+            </Principal>
+            <Dependent Role="PatientConsultation">
+              <PropertyRef Name="DoctorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FieldValue_Field">
+          <End Role="Field" Type="PhekoModel.Field" Multiplicity="1" />
+          <End Role="FieldValue" Type="PhekoModel.FieldValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Field">
+              <PropertyRef Name="FieldId" />
+            </Principal>
+            <Dependent Role="FieldValue">
+              <PropertyRef Name="FieldId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientMedicalMonitoring_MedicalMonitoring">
+          <End Role="MedicalMonitoring" Type="PhekoModel.MedicalMonitoring" Multiplicity="1" />
+          <End Role="PatientMedicalMonitoring" Type="PhekoModel.PatientMedicalMonitoring" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MedicalMonitoring">
+              <PropertyRef Name="MedicalMonitoringId" />
+            </Principal>
+            <Dependent Role="PatientMedicalMonitoring">
+              <PropertyRef Name="MedicalMonitoringId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientMedicalNote_MedicalNote">
+          <End Role="MedicalNote" Type="PhekoModel.MedicalNote" Multiplicity="1" />
+          <End Role="PatientMedicalNote" Type="PhekoModel.PatientMedicalNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MedicalNote">
+              <PropertyRef Name="MedicalNoteId" />
+            </Principal>
+            <Dependent Role="PatientMedicalNote">
+              <PropertyRef Name="MedicalNoteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientPastMedicalHistory_PastMedicalHistory">
+          <End Role="PastMedicalHistory" Type="PhekoModel.PastMedicalHistory" Multiplicity="1" />
+          <End Role="PatientPastMedicalHistory" Type="PhekoModel.PatientPastMedicalHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PastMedicalHistory">
+              <PropertyRef Name="PastMedicalHistoryId" />
+            </Principal>
+            <Dependent Role="PatientPastMedicalHistory">
+              <PropertyRef Name="PastMedicalHistoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Patient_PatientPhysicalAddress">
+          <End Role="PatientAddress" Type="PhekoModel.PatientAddress" Multiplicity="0..1" />
+          <End Role="Patient" Type="PhekoModel.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PatientAddress">
+              <PropertyRef Name="PatientAddressId" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="PhysicalAddressId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Patient_PatientPostalAddress">
+          <End Role="PatientAddress" Type="PhekoModel.PatientAddress" Multiplicity="0..1" />
+          <End Role="Patient" Type="PhekoModel.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PatientAddress">
+              <PropertyRef Name="PatientAddressId" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="PostalAddressId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientChronicDesease_Patient">
+          <End Role="Patient" Type="PhekoModel.Patient" Multiplicity="1" />
+          <End Role="PatientChronicDesease" Type="PhekoModel.PatientChronicDesease" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="PatientChronicDesease">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientConsultation_Patient">
+          <End Role="Patient" Type="PhekoModel.Patient" Multiplicity="1" />
+          <End Role="PatientConsultation" Type="PhekoModel.PatientConsultation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="PatientConsultation">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientConsultationSickNote_Patient">
+          <End Role="Patient" Type="PhekoModel.Patient" Multiplicity="1" />
+          <End Role="PatientConsultationSickNote" Type="PhekoModel.PatientConsultationSickNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="PatientConsultationSickNote">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientDeseaseScreening_Patient">
+          <End Role="Patient" Type="PhekoModel.Patient" Multiplicity="1" />
+          <End Role="PatientDeseaseScreening" Type="PhekoModel.PatientDeseaseScreening" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="PatientDeseaseScreening">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientMedicalAidDependancies_Patient">
+          <End Role="Patient" Type="PhekoModel.Patient" Multiplicity="1" />
+          <End Role="PatientMedicalAidDependancies" Type="PhekoModel.PatientMedicalAidDependancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="PatientMedicalAidDependancies">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientPastMedicalHistory_Patient">
+          <End Role="Patient" Type="PhekoModel.Patient" Multiplicity="1" />
+          <End Role="PatientPastMedicalHistory" Type="PhekoModel.PatientPastMedicalHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="PatientPastMedicalHistory">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientClinicalExamination_PatientConsultation">
+          <End Role="PatientConsultation" Type="PhekoModel.PatientConsultation" Multiplicity="1" />
+          <End Role="PatientClinicalExamination" Type="PhekoModel.PatientClinicalExamination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PatientConsultation">
+              <PropertyRef Name="PatientConsultationId" />
+            </Principal>
+            <Dependent Role="PatientClinicalExamination">
+              <PropertyRef Name="PatientConsultationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientConsultationSickNote_PatientConsultation">
+          <End Role="PatientConsultation" Type="PhekoModel.PatientConsultation" Multiplicity="1" />
+          <End Role="PatientConsultationSickNote" Type="PhekoModel.PatientConsultationSickNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PatientConsultation">
+              <PropertyRef Name="PatientConsultationId" />
+            </Principal>
+            <Dependent Role="PatientConsultationSickNote">
+              <PropertyRef Name="PatientConsultationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientMedicalMonitoring_PatientConsultation">
+          <End Role="PatientConsultation" Type="PhekoModel.PatientConsultation" Multiplicity="1" />
+          <End Role="PatientMedicalMonitoring" Type="PhekoModel.PatientMedicalMonitoring" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PatientConsultation">
+              <PropertyRef Name="PatientConsultationId" />
+            </Principal>
+            <Dependent Role="PatientMedicalMonitoring">
+              <PropertyRef Name="PatientConsultationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientMedicalNote_PatientConsultation">
+          <End Role="PatientConsultation" Type="PhekoModel.PatientConsultation" Multiplicity="1" />
+          <End Role="PatientMedicalNote" Type="PhekoModel.PatientMedicalNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PatientConsultation">
+              <PropertyRef Name="PatientConsultationId" />
+            </Principal>
+            <Dependent Role="PatientMedicalNote">
+              <PropertyRef Name="PatientConsultationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientVitalSign_PatientConsultation">
+          <End Role="PatientConsultation" Type="PhekoModel.PatientConsultation" Multiplicity="1" />
+          <End Role="PatientVitalSign" Type="PhekoModel.PatientVitalSign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PatientConsultation">
+              <PropertyRef Name="PatientConsultationId" />
+            </Principal>
+            <Dependent Role="PatientVitalSign">
+              <PropertyRef Name="PatientConsultationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientVitalSign_VitalSign">
+          <End Role="VitalSign" Type="PhekoModel.VitalSign" Multiplicity="1" />
+          <End Role="PatientVitalSign" Type="PhekoModel.PatientVitalSign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VitalSign">
+              <PropertyRef Name="VitalSignId" />
+            </Principal>
+            <Dependent Role="PatientVitalSign">
+              <PropertyRef Name="VitalSignId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecurityMenuItem_SecurityObject">
+          <End Role="SecurityObject" Type="PhekoModel.SecurityObject" Multiplicity="1" />
+          <End Role="SecurityMenuItem" Type="PhekoModel.SecurityMenuItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecurityObject">
+              <PropertyRef Name="SecurityObjectId" />
+            </Principal>
+            <Dependent Role="SecurityMenuItem">
+              <PropertyRef Name="SecurityObjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecurityObjectRight_SecurityObject">
+          <End Role="SecurityObject" Type="PhekoModel.SecurityObject" Multiplicity="1" />
+          <End Role="SecurityObjectRight" Type="PhekoModel.SecurityObjectRight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecurityObject">
+              <PropertyRef Name="SecurityObjectId" />
+            </Principal>
+            <Dependent Role="SecurityObjectRight">
+              <PropertyRef Name="SecurityObjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecurityObjectRight_SecurityRole">
+          <End Role="SecurityRole" Type="PhekoModel.SecurityRole" Multiplicity="1" />
+          <End Role="SecurityObjectRight" Type="PhekoModel.SecurityObjectRight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecurityRole">
+              <PropertyRef Name="SecurityRoleId" />
+            </Principal>
+            <Dependent Role="SecurityObjectRight">
+              <PropertyRef Name="SecurityRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecurityUserRole_SecurityRole">
+          <End Role="SecurityRole" Type="PhekoModel.SecurityRole" Multiplicity="1" />
+          <End Role="SecurityUserRole" Type="PhekoModel.SecurityUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecurityRole">
+              <PropertyRef Name="SecurityRoleId" />
+            </Principal>
+            <Dependent Role="SecurityUserRole">
+              <PropertyRef Name="SecurityRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecurityUserConnectionManager_SecurityUser">
+          <End Role="SecurityUser" Type="PhekoModel.SecurityUser" Multiplicity="1" />
+          <End Role="SecurityUserConnectionManager" Type="PhekoModel.SecurityUserConnectionManager" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecurityUser">
+              <PropertyRef Name="SecurityUserId" />
+            </Principal>
+            <Dependent Role="SecurityUserConnectionManager">
+              <PropertyRef Name="SecurityUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecurityUserRole_SecurityUser">
+          <End Role="SecurityUser" Type="PhekoModel.SecurityUser" Multiplicity="1" />
+          <End Role="SecurityUserRole" Type="PhekoModel.SecurityUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecurityUser">
+              <PropertyRef Name="SecurityUserId" />
+            </Principal>
+            <Dependent Role="SecurityUserRole">
+              <PropertyRef Name="SecurityUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="pat_PatientChronicDeseaseSchedule_Result">
+          <Property Type="Int32" Name="PatientChronicDeseaseId" Nullable="true" />
+          <Property Type="Int32" Name="ChronicDeseaseId" Nullable="false" />
+          <Property Type="Int32" Name="PatientId" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Value" Nullable="true" MaxLength="2000" />
+          <Property Type="Int32" Name="YearOfDiagnoses" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pat_PatientClinicalExaminationSchedule_Result">
+          <Property Type="Int32" Name="PatientClinicalExaminationId" Nullable="true" />
+          <Property Type="Int32" Name="ClinicalExaminationId" Nullable="false" />
+          <Property Type="Int32" Name="PatientConsultationId" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Value" Nullable="true" MaxLength="2000" />
+        </ComplexType>
+        <ComplexType Name="pat_PatientDeseaseScreeningSchedule_Result">
+          <Property Type="Int32" Name="PatientDeseaseScreeningId" Nullable="true" />
+          <Property Type="Int32" Name="DeseaseScreeningId" Nullable="false" />
+          <Property Type="Int32" Name="PatientId" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Value" Nullable="true" MaxLength="2000" />
+          <Property Type="Int32" Name="YearOfScreening" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pat_PatientMedicalAidDependanciesSchedule_Result">
+          <Property Type="Int32" Name="PatientMedicalAidDependanciesId" Nullable="false" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="String" Name="PatientMedicalAidDependancy" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="MedicalAidCode" Nullable="false" MaxLength="26" />
+          <Property Type="String" Name="PatientMedicalAidDependancyDetails" Nullable="false" MaxLength="62" />
+          <Property Type="String" Name="Relationship" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="pat_PatientMedicalMonitoringSchedule_Result">
+          <Property Type="Int32" Name="PatientMedicalMonitoringId" Nullable="true" />
+          <Property Type="Int32" Name="MedicalMonitoringId" Nullable="false" />
+          <Property Type="Int32" Name="PatientConsultationId" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Value" Nullable="true" MaxLength="2000" />
+        </ComplexType>
+        <ComplexType Name="pat_PatientMedicalNoteDetailsSchedule_Result">
+          <Property Type="Int32" Name="PatientChronicDeseaseId" Nullable="true" />
+          <Property Type="Int32" Name="ChronicDeseaseId" Nullable="false" />
+          <Property Type="Int32" Name="PatientId" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Value" Nullable="true" MaxLength="2000" />
+          <Property Type="Int32" Name="YearOfDiagnoses" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pat_PatientMedicalNoteSchedule_Result">
+          <Property Type="Int32" Name="PatientMedicalNoteId" Nullable="true" />
+          <Property Type="Int32" Name="MedicalNoteId" Nullable="false" />
+          <Property Type="Int32" Name="PatientConsultationId" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Value" Nullable="true" MaxLength="2000" />
+        </ComplexType>
+        <ComplexType Name="pat_PatientPastMedicalHistorySchedule_Result">
+          <Property Type="Int32" Name="PatientPastMedicalHistoryId" Nullable="true" />
+          <Property Type="Int32" Name="PastMedicalHistoryId" Nullable="false" />
+          <Property Type="Int32" Name="PatientId" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Value" Nullable="true" MaxLength="2000" />
+        </ComplexType>
+        <ComplexType Name="pat_PatientSchedule_Result">
+          <Property Type="String" Name="Logo" Nullable="false" MaxLength="22" />
+          <Property Type="String" Name="Address1" Nullable="false" MaxLength="32" />
+          <Property Type="String" Name="Address2" Nullable="false" MaxLength="29" />
+          <Property Type="String" Name="TelephoneNumber" Nullable="false" MaxLength="13" />
+          <Property Type="String" Name="FaxNumber" Nullable="false" MaxLength="11" />
+          <Property Type="String" Name="EmailAddress" Nullable="false" MaxLength="27" />
+          <Property Type="String" Name="Website" Nullable="false" MaxLength="26" />
+          <Property Type="Int32" Name="NurseAccessInd" Nullable="false" />
+          <Property Type="Int32" Name="DoctorAccessInd" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="pat_PatientSickNoteSchedule_Result">
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="EthnicGroup" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="BirthDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="IDNumber" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="MobileNumber" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="HomeTelephone" Nullable="false" MaxLength="33" />
+          <Property Type="String" Name="WorkTelephone" Nullable="false" MaxLength="33" />
+          <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="MaritalStatus" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="MarriageType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PrefferedContactType" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="SourceOfDiscovery" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="PhysicalAddress" Nullable="true" MaxLength="1000" />
+          <Property Type="String" Name="PostalAddress" Nullable="true" MaxLength="1000" />
+        </ComplexType>
+        <ComplexType Name="pat_PatientVitalSignSchedule_Result">
+          <Property Type="String" Name="VitalSignName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="VitalSignValue" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PhekoModelStoreContainer" CdmEntityContainer="PhekoEntities">
+          <EntitySetMapping Name="ChronicDeseases">
+            <EntityTypeMapping TypeName="PhekoModel.ChronicDesease">
+              <MappingFragment StoreEntitySet="ChronicDesease">
+                <ScalarProperty Name="ChronicDeseaseId" ColumnName="ChronicDeseaseId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SortKey" ColumnName="SortKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClinicalExaminations">
+            <EntityTypeMapping TypeName="PhekoModel.ClinicalExamination">
+              <MappingFragment StoreEntitySet="ClinicalExamination">
+                <ScalarProperty Name="ClinicalExaminationId" ColumnName="ClinicalExaminationId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SortKey" ColumnName="SortKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="PhekoModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DeseaseScreenings">
+            <EntityTypeMapping TypeName="PhekoModel.DeseaseScreening">
+              <MappingFragment StoreEntitySet="DeseaseScreening">
+                <ScalarProperty Name="DeseaseScreeningId" ColumnName="DeseaseScreeningId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SortKey" ColumnName="SortKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doctors">
+            <EntityTypeMapping TypeName="PhekoModel.Doctor">
+              <MappingFragment StoreEntitySet="Doctor">
+                <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+                <ScalarProperty Name="SecurityUserId" ColumnName="SecurityUserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fields">
+            <EntityTypeMapping TypeName="PhekoModel.Field">
+              <MappingFragment StoreEntitySet="Field">
+                <ScalarProperty Name="FieldId" ColumnName="FieldId" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+                <ScalarProperty Name="DataType" ColumnName="DataType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FieldValues">
+            <EntityTypeMapping TypeName="PhekoModel.FieldValue">
+              <MappingFragment StoreEntitySet="FieldValue">
+                <ScalarProperty Name="FieldValueId" ColumnName="FieldValueId" />
+                <ScalarProperty Name="FieldId" ColumnName="FieldId" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="PropertyValue" ColumnName="PropertyValue" />
+                <ScalarProperty Name="DisplayValue" ColumnName="DisplayValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MedicalMonitorings">
+            <EntityTypeMapping TypeName="PhekoModel.MedicalMonitoring">
+              <MappingFragment StoreEntitySet="MedicalMonitoring">
+                <ScalarProperty Name="MedicalMonitoringId" ColumnName="MedicalMonitoringId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SortKey" ColumnName="SortKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MedicalNotes">
+            <EntityTypeMapping TypeName="PhekoModel.MedicalNote">
+              <MappingFragment StoreEntitySet="MedicalNote">
+                <ScalarProperty Name="MedicalNoteId" ColumnName="MedicalNoteId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SortKey" ColumnName="SortKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PastMedicalHistories">
+            <EntityTypeMapping TypeName="PhekoModel.PastMedicalHistory">
+              <MappingFragment StoreEntitySet="PastMedicalHistory">
+                <ScalarProperty Name="PastMedicalHistoryId" ColumnName="PastMedicalHistoryId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SortKey" ColumnName="SortKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="PhekoModel.Patient">
+              <MappingFragment StoreEntitySet="Patient">
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="EthnicGroup" ColumnName="EthnicGroup" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="HomeTelephoneCode" ColumnName="HomeTelephoneCode" />
+                <ScalarProperty Name="HomeTelephoneNumber" ColumnName="HomeTelephoneNumber" />
+                <ScalarProperty Name="WorkTelephoneCode" ColumnName="WorkTelephoneCode" />
+                <ScalarProperty Name="WorkTelephoneNumber" ColumnName="WorkTelephoneNumber" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="MarriageType" ColumnName="MarriageType" />
+                <ScalarProperty Name="PrefferedContactType" ColumnName="PrefferedContactType" />
+                <ScalarProperty Name="PhysicalAddressId" ColumnName="PhysicalAddressId" />
+                <ScalarProperty Name="PostalAddressId" ColumnName="PostalAddressId" />
+                <ScalarProperty Name="MedicalAidName" ColumnName="MedicalAidName" />
+                <ScalarProperty Name="MedicalAidScheme" ColumnName="MedicalAidScheme" />
+                <ScalarProperty Name="MedicalAidNumber" ColumnName="MedicalAidNumber" />
+                <ScalarProperty Name="PrincipalMemberInd" ColumnName="PrincipalMemberInd" />
+                <ScalarProperty Name="PrefferedContactMethod" ColumnName="PrefferedContactMethod" />
+                <ScalarProperty Name="SourceOfDiscovery" ColumnName="SourceOfDiscovery" />
+                <ScalarProperty Name="MedicalAidInd" ColumnName="MedicalAidInd" />
+                <ScalarProperty Name="IDType" ColumnName="IDType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientAddresses">
+            <EntityTypeMapping TypeName="PhekoModel.PatientAddress">
+              <MappingFragment StoreEntitySet="PatientAddress">
+                <ScalarProperty Name="PatientAddressId" ColumnName="PatientAddressId" />
+                <ScalarProperty Name="Line1" ColumnName="Line1" />
+                <ScalarProperty Name="Line2" ColumnName="Line2" />
+                <ScalarProperty Name="Suburb" ColumnName="Suburb" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientChronicDeseases">
+            <EntityTypeMapping TypeName="PhekoModel.PatientChronicDesease">
+              <MappingFragment StoreEntitySet="PatientChronicDesease">
+                <ScalarProperty Name="PatientChronicDeseaseId" ColumnName="PatientChronicDeseaseId" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="ChronicDeseaseId" ColumnName="ChronicDeseaseId" />
+                <ScalarProperty Name="YearOfDiagnoses" ColumnName="YearOfDiagnoses" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientClinicalExaminations">
+            <EntityTypeMapping TypeName="PhekoModel.PatientClinicalExamination">
+              <MappingFragment StoreEntitySet="PatientClinicalExamination">
+                <ScalarProperty Name="PatientClinicalExaminationId" ColumnName="PatientClinicalExaminationId" />
+                <ScalarProperty Name="PatientConsultationId" ColumnName="PatientConsultationId" />
+                <ScalarProperty Name="ClinicalExaminationId" ColumnName="ClinicalExaminationId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientConsultations">
+            <EntityTypeMapping TypeName="PhekoModel.PatientConsultation">
+              <MappingFragment StoreEntitySet="PatientConsultation">
+                <ScalarProperty Name="PatientConsultationId" ColumnName="PatientConsultationId" />
+                <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="ConsultationStatus" ColumnName="ConsultationStatus" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientConsultationSickNotes">
+            <EntityTypeMapping TypeName="PhekoModel.PatientConsultationSickNote">
+              <MappingFragment StoreEntitySet="PatientConsultationSickNote">
+                <ScalarProperty Name="PatientConsultationSickNoteId" ColumnName="PatientConsultationSickNoteId" />
+                <ScalarProperty Name="PatientConsultationId" ColumnName="PatientConsultationId" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="SicknessReason" ColumnName="SicknessReason" />
+                <ScalarProperty Name="Diagnoses" ColumnName="Diagnoses" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientDeseaseScreenings">
+            <EntityTypeMapping TypeName="PhekoModel.PatientDeseaseScreening">
+              <MappingFragment StoreEntitySet="PatientDeseaseScreening">
+                <ScalarProperty Name="PatientDeseaseScreeningId" ColumnName="PatientDeseaseScreeningId" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="DeseaseScreeningId" ColumnName="DeseaseScreeningId" />
+                <ScalarProperty Name="YearOfScreening" ColumnName="YearOfScreening" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientMedicalAidDependancies">
+            <EntityTypeMapping TypeName="PhekoModel.PatientMedicalAidDependancy">
+              <MappingFragment StoreEntitySet="PatientMedicalAidDependancies">
+                <ScalarProperty Name="PatientMedicalAidDependanciesId" ColumnName="PatientMedicalAidDependanciesId" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="FirstFullName" ColumnName="FirstFullName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MedicalAidCode" ColumnName="MedicalAidCode" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+                <ScalarProperty Name="PrincipalInd" ColumnName="PrincipalInd" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientMedicalMonitorings">
+            <EntityTypeMapping TypeName="PhekoModel.PatientMedicalMonitoring">
+              <MappingFragment StoreEntitySet="PatientMedicalMonitoring">
+                <ScalarProperty Name="PatientMedicalMonitoringId" ColumnName="PatientMedicalMonitoringId" />
+                <ScalarProperty Name="PatientConsultationId" ColumnName="PatientConsultationId" />
+                <ScalarProperty Name="MedicalMonitoringId" ColumnName="MedicalMonitoringId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientMedicalNotes">
+            <EntityTypeMapping TypeName="PhekoModel.PatientMedicalNote">
+              <MappingFragment StoreEntitySet="PatientMedicalNote">
+                <ScalarProperty Name="PatientMedicalNoteId" ColumnName="PatientMedicalNoteId" />
+                <ScalarProperty Name="PatientConsultationId" ColumnName="PatientConsultationId" />
+                <ScalarProperty Name="MedicalNoteId" ColumnName="MedicalNoteId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientPastMedicalHistories">
+            <EntityTypeMapping TypeName="PhekoModel.PatientPastMedicalHistory">
+              <MappingFragment StoreEntitySet="PatientPastMedicalHistory">
+                <ScalarProperty Name="PatientPastMedicalHistoryId" ColumnName="PatientPastMedicalHistoryId" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="PastMedicalHistoryId" ColumnName="PastMedicalHistoryId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientVitalSigns">
+            <EntityTypeMapping TypeName="PhekoModel.PatientVitalSign">
+              <MappingFragment StoreEntitySet="PatientVitalSign">
+                <ScalarProperty Name="PatientVitalSignId" ColumnName="PatientVitalSignId" />
+                <ScalarProperty Name="PatientConsultationId" ColumnName="PatientConsultationId" />
+                <ScalarProperty Name="VitalSignId" ColumnName="VitalSignId" />
+                <ScalarProperty Name="VitalSignValue" ColumnName="VitalSignValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provinces">
+            <EntityTypeMapping TypeName="PhekoModel.Province">
+              <MappingFragment StoreEntitySet="Province">
+                <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+                <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SecurityMenuItems">
+            <EntityTypeMapping TypeName="PhekoModel.SecurityMenuItem">
+              <MappingFragment StoreEntitySet="SecurityMenuItem">
+                <ScalarProperty Name="SecurityMenuItemId" ColumnName="SecurityMenuItemId" />
+                <ScalarProperty Name="SecurityObjectId" ColumnName="SecurityObjectId" />
+                <ScalarProperty Name="MenuItem" ColumnName="MenuItem" />
+                <ScalarProperty Name="MenuPath" ColumnName="MenuPath" />
+                <ScalarProperty Name="MenuOrder" ColumnName="MenuOrder" />
+                <ScalarProperty Name="MenuType" ColumnName="MenuType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SecurityObjects">
+            <EntityTypeMapping TypeName="PhekoModel.SecurityObject">
+              <MappingFragment StoreEntitySet="SecurityObject">
+                <ScalarProperty Name="SecurityObjectId" ColumnName="SecurityObjectId" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SecurityObjectRights">
+            <EntityTypeMapping TypeName="PhekoModel.SecurityObjectRight">
+              <MappingFragment StoreEntitySet="SecurityObjectRight">
+                <ScalarProperty Name="SecurityObjectRightId" ColumnName="SecurityObjectRightId" />
+                <ScalarProperty Name="SecurityObjectId" ColumnName="SecurityObjectId" />
+                <ScalarProperty Name="AccessType" ColumnName="AccessType" />
+                <ScalarProperty Name="SecurityRoleId" ColumnName="SecurityRoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SecurityRoles">
+            <EntityTypeMapping TypeName="PhekoModel.SecurityRole">
+              <MappingFragment StoreEntitySet="SecurityRole">
+                <ScalarProperty Name="SecurityRoleId" ColumnName="SecurityRoleId" />
+                <ScalarProperty Name="SecurityRoleName" ColumnName="SecurityRoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SecurityUsers">
+            <EntityTypeMapping TypeName="PhekoModel.SecurityUser">
+              <MappingFragment StoreEntitySet="SecurityUser">
+                <ScalarProperty Name="SecurityUserId" ColumnName="SecurityUserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Initials" ColumnName="Initials" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="WorkTelephoneCode" ColumnName="WorkTelephoneCode" />
+                <ScalarProperty Name="WorkTelephoneNumber" ColumnName="WorkTelephoneNumber" />
+                <ScalarProperty Name="FaxCode" ColumnName="FaxCode" />
+                <ScalarProperty Name="FaxNumber" ColumnName="FaxNumber" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
+                <ScalarProperty Name="DisabledDate" ColumnName="DisabledDate" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="FirstTimeLogInInd" ColumnName="FirstTimeLogInInd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SecurityUserConnectionManagers">
+            <EntityTypeMapping TypeName="PhekoModel.SecurityUserConnectionManager">
+              <MappingFragment StoreEntitySet="SecurityUserConnectionManager">
+                <ScalarProperty Name="SecurityUserConnectionManagerId" ColumnName="SecurityUserConnectionManagerId" />
+                <ScalarProperty Name="SecurityUserId" ColumnName="SecurityUserId" />
+                <ScalarProperty Name="ConnectionId" ColumnName="ConnectionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SecurityUserRoles">
+            <EntityTypeMapping TypeName="PhekoModel.SecurityUserRole">
+              <MappingFragment StoreEntitySet="SecurityUserRole">
+                <ScalarProperty Name="SecurityUserRoleId" ColumnName="SecurityUserRoleId" />
+                <ScalarProperty Name="SecurityUserId" ColumnName="SecurityUserId" />
+                <ScalarProperty Name="SecurityRoleId" ColumnName="SecurityRoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VitalSigns">
+            <EntityTypeMapping TypeName="PhekoModel.VitalSign">
+              <MappingFragment StoreEntitySet="VitalSign">
+                <ScalarProperty Name="VitalSignId" ColumnName="VitalSignId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SortKey" ColumnName="SortKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="pat_PatientChronicDeseaseSchedule" FunctionName="PhekoModel.Store.pat_PatientChronicDeseaseSchedule">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PhekoModel.pat_PatientChronicDeseaseSchedule_Result">
+                <ScalarProperty Name="PatientChronicDeseaseId" ColumnName="PatientChronicDeseaseId" />
+                <ScalarProperty Name="ChronicDeseaseId" ColumnName="ChronicDeseaseId" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="YearOfDiagnoses" ColumnName="YearOfDiagnoses" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pat_PatientClinicalExaminationSchedule" FunctionName="PhekoModel.Store.pat_PatientClinicalExaminationSchedule">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PhekoModel.pat_PatientClinicalExaminationSchedule_Result">
+                <ScalarProperty Name="PatientClinicalExaminationId" ColumnName="PatientClinicalExaminationId" />
+                <ScalarProperty Name="ClinicalExaminationId" ColumnName="ClinicalExaminationId" />
+                <ScalarProperty Name="PatientConsultationId" ColumnName="PatientConsultationId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pat_PatientConsultationSickNoteSchedule" FunctionName="PhekoModel.Store.pat_PatientConsultationSickNoteSchedule" />
+          <FunctionImportMapping FunctionImportName="pat_PatientDeseaseScreeningSchedule" FunctionName="PhekoModel.Store.pat_PatientDeseaseScreeningSchedule">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PhekoModel.pat_PatientDeseaseScreeningSchedule_Result">
+                <ScalarProperty Name="PatientDeseaseScreeningId" ColumnName="PatientDeseaseScreeningId" />
+                <ScalarProperty Name="DeseaseScreeningId" ColumnName="DeseaseScreeningId" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="YearOfScreening" ColumnName="YearOfScreening" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pat_PatientMedicalAidDependanciesSchedule" FunctionName="PhekoModel.Store.pat_PatientMedicalAidDependanciesSchedule">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PhekoModel.pat_PatientMedicalAidDependanciesSchedule_Result">
+                <ScalarProperty Name="PatientMedicalAidDependanciesId" ColumnName="PatientMedicalAidDependanciesId" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="PatientMedicalAidDependancy" ColumnName="PatientMedicalAidDependancy" />
+                <ScalarProperty Name="MedicalAidCode" ColumnName="MedicalAidCode" />
+                <ScalarProperty Name="PatientMedicalAidDependancyDetails" ColumnName="PatientMedicalAidDependancyDetails" />
+                <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pat_PatientMedicalMonitoringSchedule" FunctionName="PhekoModel.Store.pat_PatientMedicalMonitoringSchedule">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PhekoModel.pat_PatientMedicalMonitoringSchedule_Result">
+                <ScalarProperty Name="PatientMedicalMonitoringId" ColumnName="PatientMedicalMonitoringId" />
+                <ScalarProperty Name="MedicalMonitoringId" ColumnName="MedicalMonitoringId" />
+                <ScalarProperty Name="PatientConsultationId" ColumnName="PatientConsultationId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pat_PatientMedicalNoteDetailsSchedule" FunctionName="PhekoModel.Store.pat_PatientMedicalNoteDetailsSchedule">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PhekoModel.pat_PatientMedicalNoteDetailsSchedule_Result">
+                <ScalarProperty Name="PatientChronicDeseaseId" ColumnName="PatientChronicDeseaseId" />
+                <ScalarProperty Name="ChronicDeseaseId" ColumnName="ChronicDeseaseId" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="YearOfDiagnoses" ColumnName="YearOfDiagnoses" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pat_PatientMedicalNoteSchedule" FunctionName="PhekoModel.Store.pat_PatientMedicalNoteSchedule">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PhekoModel.pat_PatientMedicalNoteSchedule_Result">
+                <ScalarProperty Name="PatientMedicalNoteId" ColumnName="PatientMedicalNoteId" />
+                <ScalarProperty Name="MedicalNoteId" ColumnName="MedicalNoteId" />
+                <ScalarProperty Name="PatientConsultationId" ColumnName="PatientConsultationId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pat_PatientPastMedicalHistorySchedule" FunctionName="PhekoModel.Store.pat_PatientPastMedicalHistorySchedule">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PhekoModel.pat_PatientPastMedicalHistorySchedule_Result">
+                <ScalarProperty Name="PatientPastMedicalHistoryId" ColumnName="PatientPastMedicalHistoryId" />
+                <ScalarProperty Name="PastMedicalHistoryId" ColumnName="PastMedicalHistoryId" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pat_PatientSchedule" FunctionName="PhekoModel.Store.pat_PatientSchedule">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PhekoModel.pat_PatientSchedule_Result">
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="TelephoneNumber" ColumnName="TelephoneNumber" />
+                <ScalarProperty Name="FaxNumber" ColumnName="FaxNumber" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="NurseAccessInd" ColumnName="NurseAccessInd" />
+                <ScalarProperty Name="DoctorAccessInd" ColumnName="DoctorAccessInd" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pat_PatientScriptSchedule" FunctionName="PhekoModel.Store.pat_PatientScriptSchedule" />
+          <FunctionImportMapping FunctionImportName="pat_PatientSickNoteSchedule" FunctionName="PhekoModel.Store.pat_PatientSickNoteSchedule">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PhekoModel.pat_PatientSickNoteSchedule_Result">
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="EthnicGroup" ColumnName="EthnicGroup" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="HomeTelephone" ColumnName="HomeTelephone" />
+                <ScalarProperty Name="WorkTelephone" ColumnName="WorkTelephone" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="MarriageType" ColumnName="MarriageType" />
+                <ScalarProperty Name="PrefferedContactType" ColumnName="PrefferedContactType" />
+                <ScalarProperty Name="SourceOfDiscovery" ColumnName="SourceOfDiscovery" />
+                <ScalarProperty Name="PhysicalAddress" ColumnName="PhysicalAddress" />
+                <ScalarProperty Name="PostalAddress" ColumnName="PostalAddress" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pat_PatientVitalSignSchedule" FunctionName="PhekoModel.Store.pat_PatientVitalSignSchedule">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PhekoModel.pat_PatientVitalSignSchedule_Result">
+                <ScalarProperty Name="VitalSignName" ColumnName="VitalSignName" />
+                <ScalarProperty Name="VitalSignValue" ColumnName="VitalSignValue" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pat_SaveCheck" FunctionName="PhekoModel.Store.pat_SaveCheck" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

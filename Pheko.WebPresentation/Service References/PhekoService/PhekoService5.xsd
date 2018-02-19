@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:53085/PhekoService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" />
+  <xs:import schemaLocation="http://localhost:53085/PhekoService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="LoginResult" nillable="true" type="q1:SecurityUserDtoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="ResetPasswordResult" nillable="true" type="q2:SecurityUserDtoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="oldPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="ChangePasswordResult" nillable="true" type="q3:SecurityUserDtoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="securityUser" nillable="true" type="q4:SecurityUserDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="SaveUserResult" nillable="true" type="q5:SecurityUserDtoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="GetPatientDetailsResult" nillable="true" type="q6:PatientDetailResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Search">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="searchPatient" nillable="true" type="q7:PatientDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="SearchResult" nillable="true" type="q8:PatientDtoResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="patientDto" nillable="true" type="q9:PatientDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="SavePatientResult" nillable="true" type="q10:PatientDetailResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientMedicalAidDependancy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="patientMedicalAidDependancyDto" nillable="true" type="q11:PatientMedicalAidDependancyDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientMedicalAidDependancyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="SavePatientMedicalAidDependancyResult" nillable="true" type="q12:PatientMedicalAidDependancyDtoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientConsultation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="patientConsultationDto" nillable="true" type="q13:PatientConsultationDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientConsultationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="SavePatientConsultationResult" nillable="true" type="q14:PatientConsultationDtoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientConsultations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientId" type="xs:int" />
+        <xs:element minOccurs="0" name="searchText" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientConsultationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="GetPatientConsultationsResult" nillable="true" type="q15:PatientConsultationDtoResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientVitalSigns">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientConsultationId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientVitalSignsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="GetPatientVitalSignsResult" nillable="true" type="q16:PatientVitalSignDtoResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientVitalSigns">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="patientVitalSigns" nillable="true" type="q17:ArrayOfPatientVitalSignDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientVitalSignsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="SavePatientVitalSignsResult" nillable="true" type="q18:PatientVitalSignDtoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientMedicalNotes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientConsultationId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientMedicalNotesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="GetPatientMedicalNotesResult" nillable="true" type="q19:PatientMedicalNoteDtoResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientMedicalNotes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="patientMedicalNotes" nillable="true" type="q20:ArrayOfPatientMedicalNoteDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientMedicalNotesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="SavePatientMedicalNotesResult" nillable="true" type="q21:PatientMedicalNoteDtoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientChronicDeseases">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientChronicDeseasesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="GetPatientChronicDeseasesResult" nillable="true" type="q22:PatientChronicDeseaseDtoResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientChronicDeseases">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="patientChronicDeseases" nillable="true" type="q23:ArrayOfPatientChronicDeseaseDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientChronicDeseasesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="SavePatientChronicDeseasesResult" nillable="true" type="q24:PatientChronicDeseaseDtoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientDeseaseScreenings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientDeseaseScreeningsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="GetPatientDeseaseScreeningsResult" nillable="true" type="q25:PatientDeseaseScreeningDtoResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientDeseaseScreenings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="patientDeseaseScreenings" nillable="true" type="q26:ArrayOfPatientDeseaseScreeningDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientDeseaseScreeningsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="SavePatientDeseaseScreeningsResult" nillable="true" type="q27:PatientDeseaseScreeningDtoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientPastMedicalHistories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientPastMedicalHistoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="GetPatientPastMedicalHistoriesResult" nillable="true" type="q28:PatientPastMedicalHistoryDtoResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientPastMedicalHistories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="patientPastMedicalHistories" nillable="true" type="q29:ArrayOfPatientPastMedicalHistoryDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientPastMedicalHistoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="SavePatientPastMedicalHistoriesResult" nillable="true" type="q30:PatientPastMedicalHistoryDtoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientClinicalExaminations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientConsultationId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientClinicalExaminationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="GetPatientClinicalExaminationsResult" nillable="true" type="q31:PatientClinicalExaminationDtoResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientClinicalExaminations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="patientClinicalExaminations" nillable="true" type="q32:ArrayOfPatientClinicalExaminationDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientClinicalExaminationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="SavePatientClinicalExaminationsResult" nillable="true" type="q33:PatientClinicalExaminationDtoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientMedicalMonitorings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientConsultationId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientMedicalMonitoringsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="GetPatientMedicalMonitoringsResult" nillable="true" type="q34:PatientMedicalMonitoringDtoResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientMedicalMonitorings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="patientMedicalMonitorings" nillable="true" type="q35:ArrayOfPatientMedicalMonitoringDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientMedicalMonitoringsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="SavePatientMedicalMonitoringsResult" nillable="true" type="q36:PatientMedicalMonitoringDtoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientConsultationSickNote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientConsultationId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientConsultationSickNoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="GetPatientConsultationSickNoteResult" nillable="true" type="q37:PatientConsultationSickNoteDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientConsultationSickNote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="patientConsultationSickNoteDto" nillable="true" type="q38:PatientConsultationSickNoteDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientConsultationSickNoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" minOccurs="0" name="SavePatientConsultationSickNoteResult" nillable="true" type="q39:PatientConsultationSickNoteDtoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountries">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="GetCountriesResult" nillable="true" type="q40:ArrayOfCountryDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountryProvinces">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="countryId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountryProvincesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="GetCountryProvincesResult" nillable="true" type="q41:ArrayOfProvinceDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFieldValues">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tableName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fieldName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFieldValuesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="GetFieldValuesResult" nillable="true" type="q42:ArrayOfFieldValueDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDoctors">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDoctorsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="GetDoctorsResult" nillable="true" type="q43:ArrayOfDoctorDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientSchedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientId" type="xs:int" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientScheduleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPatientScheduleResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientSickNoteSchedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientConsultationId" type="xs:int" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientSickNoteScheduleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPatientSickNoteScheduleResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientScriptNoteSchedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientConsultationId" type="xs:int" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientScriptNoteScheduleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPatientScriptNoteScheduleResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

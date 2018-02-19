@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PhekoService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:53085/PhekoService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:53085/PhekoService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:53085/PhekoService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" />
+      <xsd:import schemaLocation="http://localhost:53085/PhekoService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.UtilityComponent" />
+      <xsd:import schemaLocation="http://localhost:53085/PhekoService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+      <xsd:import schemaLocation="http://localhost:53085/PhekoService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.Enums" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPhekoService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_ResetPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_ResetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_ChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_ChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_SaveUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUser" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_SaveUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_GetPatientDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientDetails" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_GetPatientDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_Search_InputMessage">
+    <wsdl:part name="parameters" element="tns:Search" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_Search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_SavePatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePatient" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_SavePatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_SavePatientMedicalAidDependancy_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePatientMedicalAidDependancy" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_SavePatientMedicalAidDependancy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePatientMedicalAidDependancyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_SavePatientConsultation_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePatientConsultation" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_SavePatientConsultation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePatientConsultationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_GetPatientConsultations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientConsultations" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_GetPatientConsultations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientConsultationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_GetCountries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountries" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_GetCountries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_GetCountryProvinces_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountryProvinces" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_GetCountryProvinces_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountryProvincesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_GetFieldValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFieldValues" />
+  </wsdl:message>
+  <wsdl:message name="IPhekoService_GetFieldValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFieldValuesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPhekoService">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhekoService/Login" message="tns:IPhekoService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhekoService/LoginResponse" message="tns:IPhekoService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhekoService/ResetPassword" message="tns:IPhekoService_ResetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhekoService/ResetPasswordResponse" message="tns:IPhekoService_ResetPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhekoService/ChangePassword" message="tns:IPhekoService_ChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhekoService/ChangePasswordResponse" message="tns:IPhekoService_ChangePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhekoService/SaveUser" message="tns:IPhekoService_SaveUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhekoService/SaveUserResponse" message="tns:IPhekoService_SaveUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhekoService/GetPatientDetails" message="tns:IPhekoService_GetPatientDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhekoService/GetPatientDetailsResponse" message="tns:IPhekoService_GetPatientDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhekoService/Search" message="tns:IPhekoService_Search_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhekoService/SearchResponse" message="tns:IPhekoService_Search_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhekoService/SavePatient" message="tns:IPhekoService_SavePatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhekoService/SavePatientResponse" message="tns:IPhekoService_SavePatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePatientMedicalAidDependancy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhekoService/SavePatientMedicalAidDependancy" message="tns:IPhekoService_SavePatientMedicalAidDependancy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhekoService/SavePatientMedicalAidDependancyResponse" message="tns:IPhekoService_SavePatientMedicalAidDependancy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePatientConsultation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhekoService/SavePatientConsultation" message="tns:IPhekoService_SavePatientConsultation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhekoService/SavePatientConsultationResponse" message="tns:IPhekoService_SavePatientConsultation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientConsultations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhekoService/GetPatientConsultations" message="tns:IPhekoService_GetPatientConsultations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhekoService/GetPatientConsultationsResponse" message="tns:IPhekoService_GetPatientConsultations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhekoService/GetCountries" message="tns:IPhekoService_GetCountries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhekoService/GetCountriesResponse" message="tns:IPhekoService_GetCountries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryProvinces">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhekoService/GetCountryProvinces" message="tns:IPhekoService_GetCountryProvinces_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhekoService/GetCountryProvincesResponse" message="tns:IPhekoService_GetCountryProvinces_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldValues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhekoService/GetFieldValues" message="tns:IPhekoService_GetFieldValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhekoService/GetFieldValuesResponse" message="tns:IPhekoService_GetFieldValues_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPhekoService" type="tns:IPhekoService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IPhekoService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <soap:operation soapAction="http://tempuri.org/IPhekoService/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/IPhekoService/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <soap:operation soapAction="http://tempuri.org/IPhekoService/SaveUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientDetails">
+      <soap:operation soapAction="http://tempuri.org/IPhekoService/GetPatientDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap:operation soapAction="http://tempuri.org/IPhekoService/Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePatient">
+      <soap:operation soapAction="http://tempuri.org/IPhekoService/SavePatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePatientMedicalAidDependancy">
+      <soap:operation soapAction="http://tempuri.org/IPhekoService/SavePatientMedicalAidDependancy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePatientConsultation">
+      <soap:operation soapAction="http://tempuri.org/IPhekoService/SavePatientConsultation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientConsultations">
+      <soap:operation soapAction="http://tempuri.org/IPhekoService/GetPatientConsultations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <soap:operation soapAction="http://tempuri.org/IPhekoService/GetCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryProvinces">
+      <soap:operation soapAction="http://tempuri.org/IPhekoService/GetCountryProvinces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldValues">
+      <soap:operation soapAction="http://tempuri.org/IPhekoService/GetFieldValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PhekoService">
+    <wsdl:port name="BasicHttpBinding_IPhekoService" binding="tns:BasicHttpBinding_IPhekoService">
+      <soap:address location="http://localhost:53085/PhekoService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

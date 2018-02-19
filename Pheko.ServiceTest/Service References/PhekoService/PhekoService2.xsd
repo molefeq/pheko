@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:53085/PhekoService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.Enums" />
+  <xs:complexType name="SecurityUserDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Pheko.Common.Enums" minOccurs="0" name="CrudOperation" type="q1:CrudOperations" />
+      <xs:element minOccurs="0" name="DisabledDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstTimeLogInInd" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Initials" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="PasswordSalt" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="SecurityUserId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SecurityUserRoles" nillable="true" type="tns:ArrayOfSecurityUserRoleDto" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkTelephoneCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkTelephoneNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SecurityUserDto" nillable="true" type="tns:SecurityUserDto" />
+  <xs:complexType name="ArrayOfSecurityUserRoleDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SecurityUserRoleDto" nillable="true" type="tns:SecurityUserRoleDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSecurityUserRoleDto" nillable="true" type="tns:ArrayOfSecurityUserRoleDto" />
+  <xs:complexType name="SecurityUserRoleDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SecurityRoleId" type="xs:int" />
+      <xs:element minOccurs="0" name="SecurityUserId" type="xs:int" />
+      <xs:element minOccurs="0" name="SecurityUserRoleId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SecurityUserRoleDto" nillable="true" type="tns:SecurityUserRoleDto" />
+  <xs:complexType name="PatientDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Pheko.Common.Enums" minOccurs="0" name="CrudOperation" type="q2:CrudOperations" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EthnicGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomeTelephoneCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomeTelephoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaritalStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarriageType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MedicalAidInd" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MedicalAidName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MedicalAidNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MedicalAidScheme" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PhysicalAddress" nillable="true" type="tns:PatientAddressDto" />
+      <xs:element minOccurs="0" name="PostalAddress" nillable="true" type="tns:PatientAddressDto" />
+      <xs:element minOccurs="0" name="PrefferedContactMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrefferedContactType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrincipalMemberInd" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SourceOfDiscovery" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkTelephoneCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkTelephoneNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientDto" nillable="true" type="tns:PatientDto" />
+  <xs:complexType name="PatientAddressDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Line1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Line2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientAddressId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvinceId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Suburb" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientAddressDto" nillable="true" type="tns:PatientAddressDto" />
+  <xs:complexType name="ArrayOfPatientMedicalAidDependancyDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PatientMedicalAidDependancyDto" nillable="true" type="tns:PatientMedicalAidDependancyDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPatientMedicalAidDependancyDto" nillable="true" type="tns:ArrayOfPatientMedicalAidDependancyDto" />
+  <xs:complexType name="PatientMedicalAidDependancyDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Pheko.Common.Enums" minOccurs="0" name="CrudOperation" type="q3:CrudOperations" />
+      <xs:element minOccurs="0" name="FirstFullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MedicalAidCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientId" type="xs:int" />
+      <xs:element minOccurs="0" name="PatientMedicalAidDependanciesId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PrincipalInd" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Relationship" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientMedicalAidDependancyDto" nillable="true" type="tns:PatientMedicalAidDependancyDto" />
+  <xs:complexType name="ArrayOfPatientDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PatientDto" nillable="true" type="tns:PatientDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPatientDto" nillable="true" type="tns:ArrayOfPatientDto" />
+  <xs:complexType name="PatientConsultationDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConsultationStatus" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Pheko.Common.Enums" minOccurs="0" name="CrudOperation" type="q4:CrudOperations" />
+      <xs:element minOccurs="0" name="DoctorId" type="xs:int" />
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PatientConsultationId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PatientId" type="xs:int" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientConsultationDto" nillable="true" type="tns:PatientConsultationDto" />
+  <xs:complexType name="ArrayOfPatientConsultationDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PatientConsultationDto" nillable="true" type="tns:PatientConsultationDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPatientConsultationDto" nillable="true" type="tns:ArrayOfPatientConsultationDto" />
+  <xs:complexType name="ArrayOfCountryDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CountryDto" nillable="true" type="tns:CountryDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCountryDto" nillable="true" type="tns:ArrayOfCountryDto" />
+  <xs:complexType name="CountryDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CountryDto" nillable="true" type="tns:CountryDto" />
+  <xs:complexType name="ArrayOfProvinceDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProvinceDto" nillable="true" type="tns:ProvinceDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProvinceDto" nillable="true" type="tns:ArrayOfProvinceDto" />
+  <xs:complexType name="ProvinceDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProvinceId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ProvinceName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProvinceDto" nillable="true" type="tns:ProvinceDto" />
+  <xs:complexType name="ArrayOfFieldValueDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FieldValueDto" nillable="true" type="tns:FieldValueDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFieldValueDto" nillable="true" type="tns:ArrayOfFieldValueDto" />
+  <xs:complexType name="FieldValueDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldId" type="xs:int" />
+      <xs:element minOccurs="0" name="FieldValueId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PropertyValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SortOrder" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FieldValueDto" nillable="true" type="tns:FieldValueDto" />
+</xs:schema>

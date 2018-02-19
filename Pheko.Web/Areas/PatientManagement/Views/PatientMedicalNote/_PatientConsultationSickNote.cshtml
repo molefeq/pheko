@@ -1,0 +1,62 @@
+﻿@using Pheko.WebPresentation.ViewModels;
+
+@model PatientConsultationSickNoteViewModel
+
+<div class="panel panel-primary">
+
+    <div class="panel-body">
+        <div class="container-fluid" data-bind='with: patientconsultationsicknote'>
+            <div class="form-group">
+                @Html.Label("Sick From", new { @class = "col-sm-2 control-label" })
+                <div class="col-sm-10">
+                    @Html.TextAreaFor(model => model.SicknessReason, new { @class = "noteTextArea form-control", data_bind = "value: SicknessReason" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("Diagnoses", new { @class = "col-sm-2 control-label" })
+                <div class="col-sm-10">
+                    @Html.TextAreaFor(model => model.Diagnoses, new { @class = "noteTextArea form-control", data_bind = "value: Diagnoses" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("Sick leave Starts from", new { @class = "col-sm-2 control-label" })
+                <div class="col-sm-10">
+                    <div class="col-xs-3" style="padding-left: 0px;">
+                        <div class="input-group date">
+                            @Html.TextBoxFor(model => model.StartDate, new { @class = "form-control", data_bind = "value: StartDate" })
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-th"></i>
+                            </span>
+                        </div>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.StartDate)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("Sick leave Ends at", new { @class = "col-sm-2 control-label" })
+                <div class="col-sm-10">
+                    <div class="col-xs-3" style="padding-left: 0px;">
+                        <div class="input-group date">
+                            @Html.TextBoxFor(model => model.EndDate, new { @class = "form-control", data_bind = "value: EndDate" })
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-th"></i>
+                            </span>
+                        </div>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.EndDate)
+                </div>
+            </div>
+        </div>
+        
+        <div class="container-fluid">
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" value="Print Sick Note" id="btnPrintSickNote" name="Command" class="btn btn-primary btn-sm" 
+                   data-bind="@("click: function(data, event) { printsicknote(data, event, '" + @Url.Action("PrintPatientSickNoteSchedule", "PatientMedicalNote", new { area = "PatientManagement" }) + "', '" + @Url.Action("SavePatientConsultationSickNote", "PatientMedicalNote", new { area = "PatientManagement" }) + "')}")"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

@@ -1,0 +1,91 @@
+﻿@using Pheko.WebPresentation.ViewModels;
+
+@model SearchPatientViewModel
+
+@using (Ajax.BeginForm("SearchPatient", "PatientManagement", new { ReturnUrl = Request.QueryString["ReturnUrl"], area = "PatientManagement" },
+                        new AjaxOptions
+                        {
+                            HttpMethod = "POST",
+                            OnSuccess = "SearchPatientSuccess",
+                            OnBegin = "SearchPatientBegin"
+                        },
+                        new
+                        {
+                            id = "frmLogin",
+                            enctype = "multipart/form-data",
+                            @class = "form-horizontal"
+                        }
+                        ))
+{
+    @Html.AntiForgeryToken()
+    <div class="formcontent container-fluid" id="divPatientSearch">
+        <div class="form-group">
+            @Html.LabelFor(model => model.PatientId, new { @class = "col-sm-offset-2 col-sm-2 control-label" })
+            <div class="col-sm-8">
+                <div class="col-xs-4">
+                    @Html.TextBoxFor(model => model.PatientId, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstName, new { @class = "col-sm-offset-2 col-sm-2 control-label" })
+            <div class="col-sm-8">
+                <div class="col-xs-4">
+                    @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName, new { @class = "col-sm-offset-2 col-sm-2 control-label" })
+            <div class="col-sm-8">
+                <div class="col-xs-4">
+                    @Html.TextBoxFor(model => model.LastName, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.BirthDate, new { @class = "col-sm-offset-2 col-sm-2 control-label" })
+            <div class="col-sm-8">
+                <div class="col-xs-4">
+                    <div class="input-group date">
+                        @Html.TextBoxFor(model => model.BirthDate, new { @class = "form-control" })
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-th"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdNumber, new { @class = "col-sm-offset-2 col-sm-2 control-label" })
+            <div class="col-sm-8">
+                <div class="col-xs-4">
+                    @Html.TextBoxFor(model => model.IdNumber, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-8">
+                @Html.ValidationSummary()
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-8">
+                <div class="col-xs-4">
+                    <input type="submit" value="Search" name="btnPatientSearch" class="btn btn-primary btn-sm" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div id="SearchGridContanier" class="container-fluid">
+    <div class="row" style="height: 520px; margin-left: 5px;" id="grid">
+    </div>
+    <div id="pager" style="width: 100%; height: 20px;"></div>
+</div>
+
+<div data-url="@Url.Action("LoadPatients", "PatientManagement", new { area = "PatientManagement", FirstName = "Qini" })" id="divGetPatientUrl"></div>
+<div data-url="@Url.Action("EditPatient", "PatientManagement", new { area = "PatientManagement" })" id="divEditPatientUrl"></div>
+
+<script src="@Url.Content("~/Scripts/Pheko/Utilities/phekodatepicker.js")"></script>

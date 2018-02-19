@@ -1,0 +1,28 @@
+﻿@using Pheko.WebPresentation.ViewModels;
+
+@{
+    ViewBag.Title = "PatientManagement";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts{
+    <script src="@Url.Content("~/Scripts/Pheko/phekogrid.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Pheko/PatientManagement/createpatient.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Pheko/PatientManagement/searchpatient.js")" type="text/javascript"></script>
+}
+<ul class="nav nav-tabs">
+    <li class="active"><a href="#SearchPatientContainer" data-toggle="tab">Search Patient</a></li>
+    <li><a href="#CreatePatient" data-toggle="tab">Create Patient</a></li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane" id="CreatePatient">
+        @Html.Partial("_CreatePatient", new CreatePatientViewModel())
+    </div>
+
+    <div class="tab-pane active" id="SearchPatientContainer">
+        @Html.Partial("_SearchPatient", new SearchPatientViewModel())
+    </div>
+</div>
+
+

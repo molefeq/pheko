@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{794A7B99-893B-4B7B-A554-0F939E62D22D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pheko.DataAccess</RootNamespace>
+    <AssemblyName>Pheko.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChronicDesease.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicalExamination.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Country.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeseaseScreening.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\ParameterType.cs" />
+    <Compile Include="Field.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FieldValue.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MedicalMonitoring.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MedicalNote.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PastMedicalHistory.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Patient.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatientAddress.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatientChronicDesease.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatientClinicalExamination.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatientConsultation.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatientConsultationSickNote.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatientDeseaseScreening.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatientMedicalAidDependancy.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatientMedicalMonitoring.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatientMedicalNote.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatientPastMedicalHistory.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatientVitalSign.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pat_PatientChronicDeseaseSchedule_Result.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pat_PatientClinicalExaminationSchedule_Result.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pat_PatientDeseaseScreeningSchedule_Result.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pat_PatientMedicalAidDependanciesSchedule_Result.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pat_PatientMedicalMonitoringSchedule_Result.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pat_PatientMedicalNoteDetailsSchedule_Result.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pat_PatientMedicalNoteSchedule_Result.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pat_PatientPastMedicalHistorySchedule_Result.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pat_PatientSchedule_Result.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pat_PatientSickNoteSchedule_Result.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pat_PatientVitalSignSchedule_Result.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhekoModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhekoModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhekoModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhekoModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhekoModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Province.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Classes\GenericRepository.cs" />
+    <Compile Include="Repository\UnitOfWork.cs" />
+    <Compile Include="SecurityMenuItem.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityObject.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityObjectRight.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityRole.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityUser.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityUserConnectionManager.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityUserRole.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\DbConverter.cs" />
+    <Compile Include="Utility\Parameter.cs" />
+    <Compile Include="VitalSign.cs">
+      <DependentUpon>PhekoModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <EntityDeploy Include="PhekoModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PhekoModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PhekoModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PhekoModel.edmx</DependentUpon>
+      <LastGenOutput>PhekoModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="PhekoModel.edmx.diagram">
+      <DependentUpon>PhekoModel.edmx</DependentUpon>
+    </None>
+    <None Include="PhekoModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PhekoModel.edmx</DependentUpon>
+      <LastGenOutput>PhekoModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

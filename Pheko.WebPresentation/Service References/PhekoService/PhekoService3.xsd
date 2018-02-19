@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:53085/PhekoService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.UtilityComponent" />
+  <xs:import schemaLocation="http://localhost:53085/PhekoService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+  <xs:complexType name="SecurityUserDtoResponse">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="{0}Response" Namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="SecurityUserDto" Namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Pheko.Common.UtilityComponent" minOccurs="0" name="FieldErrors" nillable="true" type="q1:ArrayOfFieldError" />
+      <xs:element minOccurs="0" name="HasErrors" type="xs:boolean" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="Model" nillable="true" type="q2:SecurityUserDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SecurityUserDtoResponse" nillable="true" type="tns:SecurityUserDtoResponse" />
+  <xs:complexType name="PatientDetailResponse">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Pheko.Common.UtilityComponent" minOccurs="0" name="FieldErrors" nillable="true" type="q3:ArrayOfFieldError" />
+      <xs:element minOccurs="0" name="HasErrors" type="xs:boolean" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="Patient" nillable="true" type="q4:PatientDto" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="PatientMedicalAidDependancies" nillable="true" type="q5:ArrayOfPatientMedicalAidDependancyDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientDetailResponse" nillable="true" type="tns:PatientDetailResponse" />
+  <xs:complexType name="PatientDtoResult">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="{0}Result" Namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PatientDto" Namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="Models" nillable="true" type="q6:ArrayOfPatientDto" />
+      <xs:element minOccurs="0" name="Total" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientDtoResult" nillable="true" type="tns:PatientDtoResult" />
+  <xs:complexType name="PatientMedicalAidDependancyDtoResponse">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="{0}Response" Namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PatientMedicalAidDependancyDto" Namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Pheko.Common.UtilityComponent" minOccurs="0" name="FieldErrors" nillable="true" type="q7:ArrayOfFieldError" />
+      <xs:element minOccurs="0" name="HasErrors" type="xs:boolean" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="Model" nillable="true" type="q8:PatientMedicalAidDependancyDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientMedicalAidDependancyDtoResponse" nillable="true" type="tns:PatientMedicalAidDependancyDtoResponse" />
+  <xs:complexType name="PatientConsultationDtoResponse">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="{0}Response" Namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PatientConsultationDto" Namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Pheko.Common.UtilityComponent" minOccurs="0" name="FieldErrors" nillable="true" type="q9:ArrayOfFieldError" />
+      <xs:element minOccurs="0" name="HasErrors" type="xs:boolean" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="Model" nillable="true" type="q10:PatientConsultationDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientConsultationDtoResponse" nillable="true" type="tns:PatientConsultationDtoResponse" />
+  <xs:complexType name="PatientConsultationDtoResult">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="{0}Result" Namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PatientConsultationDto" Namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="Models" nillable="true" type="q11:ArrayOfPatientConsultationDto" />
+      <xs:element minOccurs="0" name="Total" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientConsultationDtoResult" nillable="true" type="tns:PatientConsultationDtoResult" />
+  <xs:complexType name="PatientVitalSignDtoResult">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="{0}Result" Namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PatientVitalSignDto" Namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="Models" nillable="true" type="q12:ArrayOfPatientVitalSignDto" />
+      <xs:element minOccurs="0" name="Total" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientVitalSignDtoResult" nillable="true" type="tns:PatientVitalSignDtoResult" />
+  <xs:complexType name="PatientVitalSignDtoResponse">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="{0}Response" Namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PatientVitalSignDto" Namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Pheko.Common.UtilityComponent" minOccurs="0" name="FieldErrors" nillable="true" type="q13:ArrayOfFieldError" />
+      <xs:element minOccurs="0" name="HasErrors" type="xs:boolean" />
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="Model" nillable="true" type="q14:PatientVitalSignDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientVitalSignDtoResponse" nillable="true" type="tns:PatientVitalSignDtoResponse" />
+  <xs:complexType name="PatientMedicalNoteDtoResult">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="{0}Result" Namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PatientMedicalNoteDto" Namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="Models" nillable="true" type="q15:ArrayOfPatientMedicalNoteDto" />
+      <xs:element minOccurs="0" name="Total" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientMedicalNoteDtoResult" nillable="true" type="tns:PatientMedicalNoteDtoResult" />
+  <xs:complexType name="PatientMedicalNoteDtoResponse">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="{0}Response" Namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PatientMedicalNoteDto" Namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Pheko.Common.UtilityComponent" minOccurs="0" name="FieldErrors" nillable="true" type="q16:ArrayOfFieldError" />
+      <xs:element minOccurs="0" name="HasErrors" type="xs:boolean" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="Model" nillable="true" type="q17:PatientMedicalNoteDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientMedicalNoteDtoResponse" nillable="true" type="tns:PatientMedicalNoteDtoResponse" />
+  <xs:complexType name="PatientChronicDeseaseDtoResult">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="{0}Result" Namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PatientChronicDeseaseDto" Namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="Models" nillable="true" type="q18:ArrayOfPatientChronicDeseaseDto" />
+      <xs:element minOccurs="0" name="Total" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientChronicDeseaseDtoResult" nillable="true" type="tns:PatientChronicDeseaseDtoResult" />
+  <xs:complexType name="PatientChronicDeseaseDtoResponse">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="{0}Response" Namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PatientChronicDeseaseDto" Namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Pheko.Common.UtilityComponent" minOccurs="0" name="FieldErrors" nillable="true" type="q19:ArrayOfFieldError" />
+      <xs:element minOccurs="0" name="HasErrors" type="xs:boolean" />
+      <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="Model" nillable="true" type="q20:PatientChronicDeseaseDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientChronicDeseaseDtoResponse" nillable="true" type="tns:PatientChronicDeseaseDtoResponse" />
+  <xs:complexType name="PatientDeseaseScreeningDtoResult">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="{0}Result" Namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PatientDeseaseScreeningDto" Namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="Models" nillable="true" type="q21:ArrayOfPatientDeseaseScreeningDto" />
+      <xs:element minOccurs="0" name="Total" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientDeseaseScreeningDtoResult" nillable="true" type="tns:PatientDeseaseScreeningDtoResult" />
+  <xs:complexType name="PatientDeseaseScreeningDtoResponse">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="{0}Response" Namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PatientDeseaseScreeningDto" Namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Pheko.Common.UtilityComponent" minOccurs="0" name="FieldErrors" nillable="true" type="q22:ArrayOfFieldError" />
+      <xs:element minOccurs="0" name="HasErrors" type="xs:boolean" />
+      <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="Model" nillable="true" type="q23:PatientDeseaseScreeningDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientDeseaseScreeningDtoResponse" nillable="true" type="tns:PatientDeseaseScreeningDtoResponse" />
+  <xs:complexType name="PatientPastMedicalHistoryDtoResult">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="{0}Result" Namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PatientPastMedicalHistoryDto" Namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="Models" nillable="true" type="q24:ArrayOfPatientPastMedicalHistoryDto" />
+      <xs:element minOccurs="0" name="Total" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientPastMedicalHistoryDtoResult" nillable="true" type="tns:PatientPastMedicalHistoryDtoResult" />
+  <xs:complexType name="PatientPastMedicalHistoryDtoResponse">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="{0}Response" Namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PatientPastMedicalHistoryDto" Namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Pheko.Common.UtilityComponent" minOccurs="0" name="FieldErrors" nillable="true" type="q25:ArrayOfFieldError" />
+      <xs:element minOccurs="0" name="HasErrors" type="xs:boolean" />
+      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="Model" nillable="true" type="q26:PatientPastMedicalHistoryDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientPastMedicalHistoryDtoResponse" nillable="true" type="tns:PatientPastMedicalHistoryDtoResponse" />
+  <xs:complexType name="PatientClinicalExaminationDtoResult">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="{0}Result" Namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PatientClinicalExaminationDto" Namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="Models" nillable="true" type="q27:ArrayOfPatientClinicalExaminationDto" />
+      <xs:element minOccurs="0" name="Total" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientClinicalExaminationDtoResult" nillable="true" type="tns:PatientClinicalExaminationDtoResult" />
+  <xs:complexType name="PatientClinicalExaminationDtoResponse">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="{0}Response" Namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PatientClinicalExaminationDto" Namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Pheko.Common.UtilityComponent" minOccurs="0" name="FieldErrors" nillable="true" type="q28:ArrayOfFieldError" />
+      <xs:element minOccurs="0" name="HasErrors" type="xs:boolean" />
+      <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="Model" nillable="true" type="q29:PatientClinicalExaminationDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientClinicalExaminationDtoResponse" nillable="true" type="tns:PatientClinicalExaminationDtoResponse" />
+  <xs:complexType name="PatientMedicalMonitoringDtoResult">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="{0}Result" Namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PatientMedicalMonitoringDto" Namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="Models" nillable="true" type="q30:ArrayOfPatientMedicalMonitoringDto" />
+      <xs:element minOccurs="0" name="Total" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientMedicalMonitoringDtoResult" nillable="true" type="tns:PatientMedicalMonitoringDtoResult" />
+  <xs:complexType name="PatientMedicalMonitoringDtoResponse">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="{0}Response" Namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PatientMedicalMonitoringDto" Namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Pheko.Common.UtilityComponent" minOccurs="0" name="FieldErrors" nillable="true" type="q31:ArrayOfFieldError" />
+      <xs:element minOccurs="0" name="HasErrors" type="xs:boolean" />
+      <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="Model" nillable="true" type="q32:PatientMedicalMonitoringDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientMedicalMonitoringDtoResponse" nillable="true" type="tns:PatientMedicalMonitoringDtoResponse" />
+  <xs:complexType name="PatientConsultationSickNoteDtoResponse">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="{0}Response" Namespace="http://schemas.datacontract.org/2004/07/Pheko.ServicePresentation.ServiceResponses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PatientConsultationSickNoteDto" Namespace="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Pheko.Common.UtilityComponent" minOccurs="0" name="FieldErrors" nillable="true" type="q33:ArrayOfFieldError" />
+      <xs:element minOccurs="0" name="HasErrors" type="xs:boolean" />
+      <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Pheko.Common.DataTransformObjects" minOccurs="0" name="Model" nillable="true" type="q34:PatientConsultationSickNoteDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientConsultationSickNoteDtoResponse" nillable="true" type="tns:PatientConsultationSickNoteDtoResponse" />
+</xs:schema>

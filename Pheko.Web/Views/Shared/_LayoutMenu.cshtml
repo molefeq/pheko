@@ -1,0 +1,24 @@
+﻿<ul class="nav nav-tabs nav-justified" id="menu">
+    <li>
+        <a href="@Url.Action("PatientManagement", "PatientManagement", new { area = "PatientManagement" })">Home</a>
+    </li>
+
+    @if (PatientId != null)
+    {
+        <li>
+            <a href="@Url.Action("Patient", "Patient", new { area = "PatientManagement" })">Patient</a>
+        </li>
+        <li>
+            <a href="@Url.Action("PatientConsultation", "PatientConsultation", new { area = "PatientManagement" })">Patient Consultation</a>
+        </li>
+        if (PatientConsulationId != null)
+        {
+        <li>
+            <a href="@Url.Action("PatientVitalSigns", "PatientVitalSigns", new { area = "PatientManagement" })">Patient Vital Signs</a>
+        </li>
+        <li>
+            <a href="@Url.Action("PatientMedicalNote", "PatientMedicalNote", new { area = "PatientManagement" })">Patient Medical Notes</a>
+        </li>
+        }
+    }
+</ul>

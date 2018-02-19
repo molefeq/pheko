@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Pheko.Service.PhekoService" CodeBehind="PhekoService.svc.cs" %>

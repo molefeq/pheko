@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A0FC1EAC-F1F3-4ADF-845E-C3990C2454E9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pheko.ServicePresentation</RootNamespace>
+    <AssemblyName>Pheko.ServicePresentation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessRules\PatientBusinessRules.cs" />
+    <Compile Include="BusinessRules\PatientChronicDeseaseBusinessRules.cs" />
+    <Compile Include="BusinessRules\PatientClinicalExaminationBusinessRules.cs" />
+    <Compile Include="BusinessRules\PatientConsultationBusinessRules.cs" />
+    <Compile Include="BusinessRules\PatientConsultationSickNoteBusinessRules.cs" />
+    <Compile Include="BusinessRules\PatientDeseaseScreeningBusinessRules.cs" />
+    <Compile Include="BusinessRules\PatientMedicalAidDependancyBusinessRules.cs" />
+    <Compile Include="BusinessRules\PatientMedicalMonitoringBusinessRules.cs" />
+    <Compile Include="BusinessRules\PatientMedicalNoteBusinessRules.cs" />
+    <Compile Include="BusinessRules\PatientPastMedicalHistoryBusinessRules.cs" />
+    <Compile Include="BusinessRules\PatientVitalSignBusinessRules.cs" />
+    <Compile Include="BusinessRules\SecurityUserBusinessRules.cs" />
+    <Compile Include="EntityManager\Classes\DocumentScheduleManager.cs" />
+    <Compile Include="EntityManager\Classes\ListManager.cs" />
+    <Compile Include="EntityManager\Classes\PatientChronicDeseaseManager.cs" />
+    <Compile Include="EntityManager\Classes\PatientClinicalExaminationManager.cs" />
+    <Compile Include="EntityManager\Classes\PatientConsultationManager.cs" />
+    <Compile Include="EntityManager\Classes\PatientConsultationSickNoteManager.cs" />
+    <Compile Include="EntityManager\Classes\PatientDeseaseScreeningManager.cs" />
+    <Compile Include="EntityManager\Classes\PatientManager.cs" />
+    <Compile Include="EntityManager\Classes\PatientMedicalAidDependancyManager.cs" />
+    <Compile Include="EntityManager\Classes\PatientMedicalMonitoringManager.cs" />
+    <Compile Include="EntityManager\Classes\PatientMedicalNoteManager.cs" />
+    <Compile Include="EntityManager\Classes\PatientPastMedicalHistoryManager.cs" />
+    <Compile Include="EntityManager\Classes\PatientVitalSignManager.cs" />
+    <Compile Include="EntityManager\Classes\SecurityUserManager.cs" />
+    <Compile Include="EntityManager\Interfaces\IDocumentScheduleManager.cs" />
+    <Compile Include="EntityManager\Interfaces\IListManager.cs" />
+    <Compile Include="EntityManager\Interfaces\IPatientChronicDeseaseManager.cs" />
+    <Compile Include="EntityManager\Interfaces\IPatientClinicalExaminationManager.cs" />
+    <Compile Include="EntityManager\Interfaces\IPatientConsultationManager.cs" />
+    <Compile Include="EntityManager\Interfaces\IPatientConsultationSickNoteManager.cs" />
+    <Compile Include="EntityManager\Interfaces\IPatientDeseaseScreeningManager.cs" />
+    <Compile Include="EntityManager\Interfaces\IPatientManager.cs" />
+    <Compile Include="EntityManager\Interfaces\IPatientMedicalAidDependancyManager.cs" />
+    <Compile Include="EntityManager\Interfaces\IPatientMedicalMonitoringManager.cs" />
+    <Compile Include="EntityManager\Interfaces\IPatientMedicalNoteManager.cs" />
+    <Compile Include="EntityManager\Interfaces\IPatientPastMedicalHistoryManager.cs" />
+    <Compile Include="EntityManager\Interfaces\IPatientVitalSignManager.cs" />
+    <Compile Include="EntityManager\Interfaces\ISecurityUserManager.cs" />
+    <Compile Include="MapDtoToEntityObjects\ChronicDeseaseMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\ClinicalExaminationMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\CountryMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\DeseaseScreeningMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\DoctorMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\FieldValueMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\MedicalMonitoringMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\MedicalNoteMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\PastMedicalHistoryMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\PatientAddressMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\PatientChronicDeseaseMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\PatientClinicalExaminationMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\PatientConsultationMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\PatientConsultationSickNoteMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\PatientDeseaseScreeningMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\PatientMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\PatientMedicalAidDependancyMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\PatientMedicalMonitoringMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\PatientMedicalNoteMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\PatientPastMedicalHistoryMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\PatientVitalSignMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\ProvinceMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\SecurityUserMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\SecurityUserRoleMapper.cs" />
+    <Compile Include="MapDtoToEntityObjects\VitalSignMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceResponses\PatientDetailResponse.cs" />
+    <Compile Include="ServiceResponses\Response.cs" />
+    <Compile Include="ServiceResponses\Result.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pheko.Common\Pheko.Common.csproj">
+      <Project>{583fcb37-7028-4713-a82f-af7f1da634f0}</Project>
+      <Name>Pheko.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pheko.DataAccess\Pheko.DataAccess.csproj">
+      <Project>{794a7b99-893b-4b7b-a554-0f939e62d22d}</Project>
+      <Name>Pheko.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,53 @@
+﻿@using Pheko.WebPresentation.ViewModels;
+
+@model CreatePatientViewModel
+
+@using (Ajax.BeginForm("CreatePatient", "PatientManagement", new { ReturnUrl = Request.QueryString["ReturnUrl"], area = "PatientManagement" },
+                        new AjaxOptions
+                        {
+                            HttpMethod = "POST",
+                            OnSuccess = "CreatePatientSuccess",
+                            OnBegin = "CreatePatientBegin"
+                        },
+                        new
+                        {
+                            id = "frmCreatePatient",
+                            enctype = "multipart/form-data",
+                            @class = "form-horizontal"
+                        }
+                        ))
+{
+    @Html.AntiForgeryToken()
+    <div class="formcontent container-fluid" id="divPatientCreate">
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstName, new { @class = "col-sm-offset-2 col-sm-2 control-label" })
+            <div class="col-sm-8">
+                <div class="col-xs-4">
+                    @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control" })
+                </div>
+                @Html.ValidationMessageFor(model => model.FirstName)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName, new { @class = "col-sm-offset-2 col-sm-2 control-label" })
+            <div class="col-sm-8">
+                <div class="col-xs-4">
+                    @Html.TextBoxFor(model => model.LastName, new { @class = "form-control" })
+                </div>
+                @Html.ValidationMessageFor(model => model.LastName)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-8">
+                @Html.ValidationSummary(true)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-8">
+                <div class="col-xs-4">
+                    <input type="submit" value="Create" name="btnCreatePatient" class="btn btn-primary btn-sm" />
+                </div>
+            </div>
+        </div>
+    </div>
+}

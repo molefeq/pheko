@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{583FCB37-7028-4713-A82F-AF7F1DA634F0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pheko.Common</RootNamespace>
+    <AssemblyName>Pheko.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomExceptions\BindException.cs" />
+    <Compile Include="CustomExceptions\DataObjectNotFoundException.cs" />
+    <Compile Include="CustomExceptions\FieldException.cs" />
+    <Compile Include="CustomExceptions\ItextXmlSerializationException.cs" />
+    <Compile Include="CustomExceptions\ObjectDeletedException.cs" />
+    <Compile Include="CustomExceptions\ObjectFetchedException.cs" />
+    <Compile Include="CustomExceptions\ObjectInsertedException.cs" />
+    <Compile Include="CustomExceptions\ObjectUpdatedException.cs" />
+    <Compile Include="DataTransformObjects\ChronicDeseaseDto.cs" />
+    <Compile Include="DataTransformObjects\ClinicalExaminationDto.cs" />
+    <Compile Include="DataTransformObjects\CountryDto.cs" />
+    <Compile Include="DataTransformObjects\DeseaseScreeningDto.cs" />
+    <Compile Include="DataTransformObjects\DoctorDto.cs" />
+    <Compile Include="DataTransformObjects\FieldValueDto.cs" />
+    <Compile Include="DataTransformObjects\MedicalMonitoringDto.cs" />
+    <Compile Include="DataTransformObjects\MedicalNoteDto.cs" />
+    <Compile Include="DataTransformObjects\PastMedicalHistoryDto.cs" />
+    <Compile Include="DataTransformObjects\PatientAddressDto.cs" />
+    <Compile Include="DataTransformObjects\PatientChronicDeseaseDto.cs" />
+    <Compile Include="DataTransformObjects\PatientClinicalExaminationDto.cs" />
+    <Compile Include="DataTransformObjects\PatientConsultationDto.cs" />
+    <Compile Include="DataTransformObjects\PatientConsultationSickNoteDto.cs" />
+    <Compile Include="DataTransformObjects\PatientDeseaseScreeningDto.cs" />
+    <Compile Include="DataTransformObjects\PatientDto.cs" />
+    <Compile Include="DataTransformObjects\PatientMedicalAidDependancyDto.cs" />
+    <Compile Include="DataTransformObjects\PatientMedicalMonitoringDto.cs" />
+    <Compile Include="DataTransformObjects\PatientMedicalNoteDto.cs" />
+    <Compile Include="DataTransformObjects\PatientPastMedicalHistoryDto.cs" />
+    <Compile Include="DataTransformObjects\PatientVitalSignDto.cs" />
+    <Compile Include="DataTransformObjects\ProvinceDto.cs" />
+    <Compile Include="DataTransformObjects\SecurityUserDto.cs" />
+    <Compile Include="DataTransformObjects\SecurityUserRoleDto.cs" />
+    <Compile Include="DataTransformObjects\VitalSignDto.cs" />
+    <Compile Include="Enums\CrudOperations.cs" />
+    <Compile Include="ErrorLogging\ErrorLogger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UtilityComponent\Constants.cs" />
+    <Compile Include="UtilityComponent\Converter.cs" />
+    <Compile Include="UtilityComponent\FieldError.cs" />
+    <Compile Include="UtilityComponent\GeneratePassword.cs" />
+    <Compile Include="UtilityComponent\ObjectMapper.cs" />
+    <Compile Include="UtilityComponent\Utility.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

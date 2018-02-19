@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4341A5AC-AF26-4FA6-B707-C7AC97AE040B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pheko.WebPresentation</RootNamespace>
+    <AssemblyName>Pheko.WebPresentation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\Projects\Itextsharp.CustomXmlToPdfWriter\Itextsharp.CustomXmlToPdfWriter\bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Itextsharp.CustomXmlToPdfWriter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Projects\Itextsharp.CustomXmlToPdfWriter\Itextsharp.CustomXmlToPdfWriter\bin\Debug\Itextsharp.CustomXmlToPdfWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Library\BaseViewPage.cs" />
+    <Compile Include="Library\CustomPrincipal.cs" />
+    <Compile Include="Library\DataSourceResult.cs" />
+    <Compile Include="Library\ExceptionFilter.cs" />
+    <Compile Include="Library\PhekoController.cs" />
+    <Compile Include="Library\SecurityFilter.cs" />
+    <Compile Include="MappingViewModelsToDtos\CrudOperationsMapper.cs" />
+    <Compile Include="MappingViewModelsToDtos\PatientAddressViewModelMapper.cs" />
+    <Compile Include="MappingViewModelsToDtos\PatientChronicDeseaseViewModelMapper.cs" />
+    <Compile Include="MappingViewModelsToDtos\PatientClinicalExaminationViewModelMapper.cs" />
+    <Compile Include="MappingViewModelsToDtos\PatientConsultationSickNoteViewModelMapper.cs" />
+    <Compile Include="MappingViewModelsToDtos\PatientConsultationViewModelMapper.cs" />
+    <Compile Include="MappingViewModelsToDtos\PatientDeseaseScreeningViewModelMapper.cs" />
+    <Compile Include="MappingViewModelsToDtos\PatientMedicalAidDependancyViewModelMapper.cs" />
+    <Compile Include="MappingViewModelsToDtos\PatientMedicalMonitoringViewModelMapper.cs" />
+    <Compile Include="MappingViewModelsToDtos\PatientMedicalNoteViewModelMapper.cs" />
+    <Compile Include="MappingViewModelsToDtos\PatientPastMedicalHistoryViewModelMapper.cs" />
+    <Compile Include="MappingViewModelsToDtos\PatientViewModelMapper.cs" />
+    <Compile Include="MappingViewModelsToDtos\PatientVitalSignViewModelMapper.cs" />
+    <Compile Include="MappingViewModelsToDtos\SecurityUserViewModelMapper.cs" />
+    <Compile Include="PdfDocuments\PatientSchedule.cs" />
+    <Compile Include="PdfDocuments\PatientSickNoteSchedule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\PhekoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceHandlers\Classes\DocumentScheduleHandler.cs" />
+    <Compile Include="ServiceHandlers\Classes\ListHandler.cs" />
+    <Compile Include="ServiceHandlers\Classes\PatientClinicalExaminationHandler.cs" />
+    <Compile Include="ServiceHandlers\Classes\PatientConsultationHandler.cs" />
+    <Compile Include="ServiceHandlers\Classes\PatientConsultationSickNoteHandler.cs" />
+    <Compile Include="ServiceHandlers\Classes\PatientHandler.cs" />
+    <Compile Include="ServiceHandlers\Classes\PatientMedicalAidDependancyHandler.cs" />
+    <Compile Include="ServiceHandlers\Classes\PatientMedicalMonitoringHandler.cs" />
+    <Compile Include="ServiceHandlers\Classes\PatientMedicalNoteHandler.cs" />
+    <Compile Include="ServiceHandlers\Classes\PatientVitalSignHandler.cs" />
+    <Compile Include="ServiceHandlers\Classes\UserHandler.cs" />
+    <Compile Include="ServiceHandlers\Interfaces\IDocumentScheduleHandler.cs" />
+    <Compile Include="ServiceHandlers\Interfaces\IListHandler.cs" />
+    <Compile Include="ServiceHandlers\Interfaces\IPatientClinicalExaminationHandler.cs" />
+    <Compile Include="ServiceHandlers\Interfaces\IPatientConsultationSickNoteHandler.cs" />
+    <Compile Include="ServiceHandlers\Interfaces\IPatientMedicalMonitoringHandler.cs" />
+    <Compile Include="ServiceHandlers\Interfaces\IPatientMedicalNoteHandler.cs" />
+    <Compile Include="ServiceHandlers\Interfaces\IPatientVitalSignHandler.cs" />
+    <Compile Include="ServiceHandlers\Interfaces\IPatientConsultationHandler.cs" />
+    <Compile Include="ServiceHandlers\Interfaces\IPatientHandler.cs" />
+    <Compile Include="ServiceHandlers\Interfaces\IPatientMedicalAidDependancyHandler.cs" />
+    <Compile Include="ServiceHandlers\Interfaces\IUserHandler.cs" />
+    <Compile Include="Utility\Constants.cs" />
+    <Compile Include="Utility\ModelCrudOperations.cs" />
+    <Compile Include="Utility\ModelError.cs" />
+    <Compile Include="Utility\ModelException.cs" />
+    <Compile Include="Utility\ServiceResponse.cs" />
+    <Compile Include="Utility\ServiceResult.cs" />
+    <Compile Include="ViewModels\CreatePatientViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\PatientAddressViewModel.cs" />
+    <Compile Include="ViewModels\PatientChronicDeseaseViewModel.cs" />
+    <Compile Include="ViewModels\PatientClinicalExaminationViewModel.cs" />
+    <Compile Include="ViewModels\PatientConsultationSickNoteViewModel.cs" />
+    <Compile Include="ViewModels\PatientConsultationViewModel.cs" />
+    <Compile Include="ViewModels\PatientDeseaseScreeningViewModel.cs" />
+    <Compile Include="ViewModels\PatientMedicalAidDependancyViewModel.cs" />
+    <Compile Include="ViewModels\PatientMedicalMonitoringViewModel.cs" />
+    <Compile Include="ViewModels\PatientMedicalNoteViewModel.cs" />
+    <Compile Include="ViewModels\PatientPastMedicalHistoryViewModel.cs" />
+    <Compile Include="ViewModels\PatientViewModel.cs" />
+    <Compile Include="ViewModels\PatientVitalSignViewModel.cs" />
+    <Compile Include="ViewModels\SearchPatientViewModel.cs" />
+    <Compile Include="ViewModels\SecurityUserViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pheko.Common\Pheko.Common.csproj">
+      <Project>{583fcb37-7028-4713-a82f-af7f1da634f0}</Project>
+      <Name>Pheko.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\Pheko.Common.DataTransformObjects.CountryDto.datasource" />
+    <None Include="Properties\DataSources\Pheko.Common.DataTransformObjects.DoctorDto.datasource" />
+    <None Include="Properties\DataSources\Pheko.Common.DataTransformObjects.FieldValueDto.datasource" />
+    <None Include="Properties\DataSources\Pheko.Common.DataTransformObjects.PatientConsultationSickNoteDto.datasource" />
+    <None Include="Properties\DataSources\Pheko.Common.DataTransformObjects.ProvinceDto.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Service References\PhekoService\Pheko.WebPresentation.PhekoService.PatientChronicDeseaseDtoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhekoService\Pheko.WebPresentation.PhekoService.PatientChronicDeseaseDtoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhekoService\Pheko.WebPresentation.PhekoService.PatientClinicalExaminationDtoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhekoService\Pheko.WebPresentation.PhekoService.PatientClinicalExaminationDtoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhekoService\Pheko.WebPresentation.PhekoService.PatientConsultationDtoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhekoService\Pheko.WebPresentation.PhekoService.PatientConsultationDtoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhekoService\Pheko.WebPresentation.PhekoService.PatientConsultationSickNoteDtoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhekoService\Pheko.WebPresentation.PhekoService.PatientDeseaseScreeningDtoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhekoService\Pheko.WebPresentation.PhekoService.PatientDeseaseScreeningDtoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhekoService\Pheko.WebPresentation.PhekoService.PatientDetailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhekoService\Pheko.WebPresentation.PhekoService.PatientDtoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhekoService\Pheko.WebPresentation.PhekoService.PatientMedicalAidDependancyDtoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhekoService\Pheko.WebPresentation.PhekoService.PatientMedicalMonitoringDtoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhekoService\Pheko.WebPresentation.PhekoService.PatientMedicalMonitoringDtoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhekoService\Pheko.WebPresentation.PhekoService.PatientMedicalNoteDtoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhekoService\Pheko.WebPresentation.PhekoService.PatientMedicalNoteDtoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhekoService\Pheko.WebPresentation.PhekoService.PatientPastMedicalHistoryDtoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhekoService\Pheko.WebPresentation.PhekoService.PatientPastMedicalHistoryDtoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhekoService\Pheko.WebPresentation.PhekoService.PatientVitalSignDtoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhekoService\Pheko.WebPresentation.PhekoService.PatientVitalSignDtoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhekoService\Pheko.WebPresentation.PhekoService.SecurityUserDtoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhekoService\PhekoService.wsdl" />
+    <None Include="Service References\PhekoService\PhekoService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhekoService\PhekoService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhekoService\PhekoService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhekoService\PhekoService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhekoService\PhekoService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhekoService\PhekoService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhekoService\PhekoService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModelBusinessRules\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\PhekoService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PhekoService\PhekoService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PhekoService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PhekoService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PhekoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

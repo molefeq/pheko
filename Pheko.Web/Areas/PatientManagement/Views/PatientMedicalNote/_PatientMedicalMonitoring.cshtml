@@ -1,0 +1,19 @@
+﻿@using Pheko.WebPresentation.ViewModels;
+
+@model PatientMedicalMonitoringViewModel
+
+<div class="panel panel-primary">
+
+    <div class="panel-body">
+        <div class="formcontent container-fluid" data-bind='foreach: patientmedicalmonitorings'>
+            <div class="col-md-12">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.MedicalMonitoring_Name, new { @class = "col-sm-2 control-label", data_bind = "text: MedicalMonitoring_Name" })
+                    <div class="col-sm-10">
+                        @Html.TextAreaFor(model => model.MedicalMonitoringValue, new { @class = "form-control", data_bind = "value: MedicalMonitoringValue" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

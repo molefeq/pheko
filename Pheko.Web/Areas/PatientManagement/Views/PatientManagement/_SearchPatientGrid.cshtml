@@ -1,0 +1,28 @@
+﻿@using GridMvc.Html;
+@using Pheko.WebPresentation.ViewModels;
+
+@model IEnumerable<PatientViewModel>
+
+@section styles{
+    <link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" type="text/css" />
+}
+@section scripts{
+    <script src="@Url.Content("~/Scripts/gridmvc.min.js")" type="text/javascript"></script>
+}
+
+@Html.Grid(Model).Columns(columns =>
+           {
+               columns.Add(p => p.PatientId)
+                      .Encoded(false)
+                      .Sanitized(false)
+                      .SetWidth(30)
+                      .RenderValueAs(d =>
+                        @<b>
+                            @Html.ActionLink("Edit", "EditPatient", "PatientManagement", new { id = d.PatientId, area = "PatientManagement" }, null)
+                        </b>);
+               columns.Add(p => p.Title).Titled("Title").Sortable(true).SetWidth(60);
+               columns.Add(p => p.FirstName).Titled("FirstName").Sortable(true).SetWidth(110);
+               columns.Add(p => p.LastName).Titled("Lastname").Sortable(true).SetWidth(110);
+               columns.Add(p => p.BirthDate).Titled("Date Of Birth").Sortable(true).SetWidth(110);
+               columns.Add(p => p.IDNumber).Titled("ID Number").RenderValueAs(o => o.IDType + " : " + o.IDNumber).Sortable(true).SetWidth(110);
+           }).WithPaging(5)

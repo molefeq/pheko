@@ -1,0 +1,55 @@
+﻿@using Pheko.WebPresentation.ViewModels;
+
+@{
+    ViewBag.Title = "Patient Medical Note";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts{
+    <script src="@Url.Content("~/Scripts/Pheko/PhekoModels/patientmedicalnoteviewodel.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Pheko/PatientMedicalNote/patientmedicalnote.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Pheko/Utilities/phekodatepicker.js")"></script>
+}
+
+<div id="PatientMedicalNoteHolder" data-url="@Url.Action("GetPatientMedicalNotes", "PatientMedicalNote", new { area = "PatientManagement" })">
+    <form class="form-horizontal" id="frmPatientMedicalNote" enctype="multipart/form-data" method="post">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#MedicalNotes" data-toggle="tab">Medical Notes</a></li>
+            <li><a href="#ClinicalExamination" data-toggle="tab">Clinical Examinations</a></li>
+            <li><a href="#PatientMedicalMonitoring" data-toggle="tab">Patient Medical Monitorings</a></li>
+            <li><a href="#PatientSickNote" data-toggle="tab">Patient Sick Note</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="MedicalNotes">
+                @Html.Partial("_ChronicDeseases", new PatientChronicDeseaseViewModel())
+                @Html.Partial("_DeseaseScreenings", new PatientDeseaseScreeningViewModel())
+                @Html.Partial("_PastMedicalHistories", new PatientPastMedicalHistoryViewModel())
+                @Html.Partial("_MedicalNotes", new PatientMedicalNoteViewModel())
+            </div>
+            <div class="tab-pane" id="ClinicalExamination">
+                @Html.Partial("_ClinicalExaminations", new PatientClinicalExaminationViewModel())
+            </div>
+            <div class="tab-pane" id="PatientMedicalMonitoring">
+                @Html.Partial("_PatientMedicalMonitoring")
+            </div>
+            <div class="tab-pane" id="PatientSickNote">
+                @Html.Partial("_PatientConsultationSickNote", new PatientConsultationSickNoteViewModel())
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-8">
+                    <input type="submit" value="Save" id="btnSave" name="Command" class="btn btn-primary btn-sm" 
+                           data-bind="@("click: function(data, event) { save(data, event, '" + @Url.Action("SavePatientMedicalNotes", "PatientMedicalNote", new { area = "PatientManagement" }) + "', 'frmPatientMedicalNote', 'PatientMedicalNoteHolder')}")"/>
+                    <input type="submit" value="Print" id="btnPrint" name="Command" class="btn btn-primary btn-sm" 
+                           data-bind="@("click: function(data, event) { print(data, event, '" + @Url.Action("PrintPatientSchedule", "Patient", new { area = "PatientManagement" }) + "', '" + @Url.Action("SavePatientMedicalNotes", "PatientMedicalNote", new { area = "PatientManagement" }) + "', 'frmPatientMedicalNote', 'PatientMedicalNoteHolder')}")"/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<form class="form-horizontal" id="frmSavePatientMedicalNotes" enctype="multipart/form-data" method="post">
+</form>
+

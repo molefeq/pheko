@@ -1,0 +1,39 @@
+﻿@using GridMvc.Html;
+@using Pheko.WebPresentation.ViewModels;
+
+@model IEnumerable<PatientConsultationViewModel>
+
+@{
+    ViewBag.Title = "Patient Consultation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+    <link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" type="text/css" />
+}
+@section scripts{
+    <script src="@Url.Content("~/Scripts/gridmvc.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Pheko/PatientConsultation/patientconsultation.js")" type="text/javascript"></script>
+}
+<div>
+    <input type="submit" value="Create Consultation" id="btnCreateConsultation" name="Command" class="btn btn-primary btn-sm" />
+</div>
+@Html.Grid(Model).Columns(columns =>
+           {
+               columns.Add(p => p.PatientConsultationId).Titled("")
+                      .Encoded(false)
+                      .Sanitized(false)
+                      .SetWidth(30)
+                      .RenderValueAs(d =>
+                        @<b>
+                            @Html.ActionLink("View", "ViewPatientConsultation", "PatientConsultation", new { id = d.PatientConsultationId, area = "PatientManagement" }, null)
+                        </b>);
+               columns.Add(p => p.ConsultationStatus).Titled("Status").Sortable(true).SetWidth(60);
+               columns.Add(p => p.StartDate).Titled("Start Date").Sortable(true).SetWidth(110);
+               columns.Add(p => p.EndDate).Titled("End Date").Sortable(true).SetWidth(110);
+           }).WithPaging(20)
+
+
+<div id="patientdconsultationdialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="ModalHeader" aria-hidden="true" data-url="@Url.Action("GetCreatePatientConsultationView", "PatientConsultation", new {area = "PatientManagement"})">
+</div>
+
